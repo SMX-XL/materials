@@ -13,7 +13,7 @@ Criteris d'avaluació:
 1.7 Reconeix les diferents topologies de xarxa.
 1.8 Identifica estructures alternatives.
 
-## 1. Xarxes de computadors
+## Xarxes de computadors
 
 Conjunt de dos o més equips informàtics, no cal que siguin els típics ordinadors que teniu en ment, poden ser mòbils, impressores, smartTV, etc. connectats entre sí per proporcionar:
 
@@ -37,9 +37,9 @@ Posteriorment, es va veure la necessitat de connectar directament els ordinadors
 
 Això era una forma molt limitada, de manera que a Estats Units a la dècada dels 60 es va dissenyar un sistema de xarxa de computadors que permetia connectar diversos ordinadors entre ells. Aquest sistema es va batejar com ARPANET i va ser el precursor de l'Internet actual.
 
-> ARPANET (Advanced Research Projects Agency Network) era una xarxa de comunicacions que va ser creada per l'Agència de Projectes de Recerca Avançada del Departament de Defensa dels Estats Units (ARPA) i va fer la primera transmissió de dades entre ordinadors el 29 d'octubre de 1969 entre UCLA i Stanford.
+> 💡ARPANET (Advanced Research Projects Agency Network) era una xarxa de comunicacions que va ser creada per l'Agència de Projectes de Recerca Avançada del Departament de Defensa dels Estats Units (ARPA) i va fer la primera transmissió de dades entre ordinadors el 29 d'octubre de 1969 entre UCLA i Stanford.
 
-### Classificació de les xarxes
+## Classificació de les xarxes
 
 A l’hora de classificar les xarxes podem usar diversos criteris, un d’habitual és la mida de la xarxa, és a dir, ens fixarem en quina extensió geogràfica està coberta per la xarxa. Aquesta classificació és significativa, perquè la mida de la xarxa determina aspectes claus de la tecnologia de la xarxa.
 
@@ -57,7 +57,9 @@ Atenent a la mida de la xarxa, podem distingir:
 
 > Imatge 3: Xarxes segons la seva mida. Atribució: Miguel Carrillo Martínez sota llicència [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
-### Topologies de xarxa
+Aquest mòdul se centra específicament en les xarxes d’àrea local (LAN) i per tant, a partir d’ara, quan parlem de xarxa, ens referirem a una xarxa local (LAN).
+
+## Topologies de xarxa
 
 Topologia és la manera com els dispositius d’una xarxa estan connectats entre si. La topologia determina com es comuniquen els dispositius, com es transmeten les dades i com es gestiona la xarxa. Hi ha diverses topologies de xarxa, cadascuna amb les seves característiques i avantatges.
 
@@ -91,3 +93,30 @@ Topologia és la manera com els dispositius d’una xarxa estan connectats entre
   
      ![Topologia híbrida](./media/topologia_hibrida.png)
    > Imatge 9: Topologia híbrida. Atribució: [Nakivo](https://www.nakivo.com/blog/types-of-network-topology-explained/)
+
+## Elements d’una xarxa local
+
+Una xarxa local està formada per diversos elements que treballen conjuntament per permetre la comunicació i el compartiment de recursos entre els dispositius connectats. A continuació, es descriuen els principals components d’una xarxa local:
+
+- **Dispositius finals**: Són els dispositius que utilitzen els usuaris per accedir a la xarxa i als seus recursos. Aquests poden incloure ordinadors, portàtils, telèfons mòbils, tauletes, impressores, càmeres de seguretat, entre altres. Aquests dispositius són els que generen i reben dades dins de la xarxa.
+- **Dispositius de xarxa**: Són els dispositius que faciliten la comunicació entre els dispositius finals i gestionen el trànsit de dades dins de la xarxa. Alguns exemples inclouen el switch, el router o el punt d'accés sense fils (AP). Aquests dispositius permeten la connexió i la transmissió de dades entre els dispositius finals i altres xarxes, com ara Internet.
+- **Mitjans de transmissió**: Són els canals físics o sense fils a través dels quals es transmeten les dades entre els dispositius de la xarxa. Aquests poden ser cables o connexions sense fils, com ara Wi-Fi o Bluetooth. Els mitjans de transmissió determinen la velocitat i la qualitat de la comunicació dins de la xarxa.
+- **Protocols de comunicació**: Són les regles i estàndards que defineixen com es transmeten les dades dins de la xarxa. Aquests protocols asseguren que els dispositius puguin entendre's entre si i permeten la interoperabilitat entre diferents fabricants i tecnologies.
+
+## Mapa físic de la xarxa local
+
+S'utilitza per representar la ubicació dels dispositius i el cablejat de xarxa dins d'un edifici. Per tant, aquest diagrama haurà de mostrar:
+
+- Dispositius connectats.
+- Rutes del cable (canalitzacions).
+
+És una eina molt important pel manteniment d’una xarxa local, perquè permet localitzar els diferents equips i conèixer les rutes que segueix el cablejat. Això simplifica molt la tasca de localitzar i resoldre problemes de connexió, així com planificar ampliacions o modificacions en la xarxa.
+
+![Mapa físic de la xarxa local](./media/mapa_fisic.png)
+> Imatge 10: Exemple de mapa físic d’una xarxa local. Atribució: [visaletterapplication.com](https://visalettersapplication.com)
+
+### Com crear un mapa físic de la xarxa local
+
+El primer pas és recopilar la informació (localització equips, conductes, etc.) A continuació usar una eina de disseny per elaborar un plànol de la planta on es troba la xarxa. Es poden usar eines com: **Microsoft Visio**, **LucidChart**, etc. En aquest pas, s'ubiquen els diferents elements (ordinadors, impressores, etc.) i les conduccions del cable.
+
+Com veurem a les properes unitats, el cablejat de xarxa acaba convergint cap un element on es troben els concentradors i altres elements de la xarxa, anomenat repartidor.
