@@ -27,13 +27,13 @@ Els primers ordinadors (ENIAC, UNIVAC, etc.) eren molt grans i a més es trobave
 
 ![IBM 2401 tape drives at the Computer History Museum](./media/IBM_2401_tape_drives_at_the_Computer_History_Museum.png)
 
->Imatge 1: Unitats de cinta IBM 2401 al Computer History Museum. Atribució: <a href="https://commons.wikimedia.org/wiki/File:IBM_2401_tape_drives_at_the_Computer_History_Museum.jpg">Don DeBold</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons
+>Imatge 1: Unitats de cinta IBM 2401 al Computer History Museum. Atribució: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_2401_tape_drives_at_the_Computer_History_Museum.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en), via Wikimedia Commons.
 
 Posteriorment, es va veure la necessitat de connectar directament els ordinadors entre ells. I com es podia fer? Doncs aprofitant les línies de telèfon que ja existien. Els ordinadors *parlaven* fent-se una trucada telefònica. Per aconseguir això, calia un dispositiu que convertís els senyals digitals de l'ordinador en senyals analògics que poguessin viatjar per la línia telefònica. Aquest dispositiu es coneix com a *modem* (modulador-demodulador).
 
 ![Modem](./media/Atari_800XL_with_Modem.png)
 
-> Imatge 2: Atari 800XL amb un modem. Atribució: <a href="https://commons.wikimedia.org/wiki/File:Atari_800XL_with_Modem.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0</a>, via Wikimedia Commons
+> Imatge 2: Atari 800XL amb un modem. Atribució: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Atari_800XL_with_Modem.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en), via Wikimedia Commons.
 
 Això era una forma molt limitada, de manera que a Estats Units a la dècada dels 60 es va dissenyar un sistema de xarxa de computadors que permetia connectar diversos ordinadors entre ells. Aquest sistema es va batejar com ARPANET i va ser el precursor de l'Internet actual.
 
