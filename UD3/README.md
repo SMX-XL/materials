@@ -187,3 +187,41 @@ Són els dispositius que s'encarreguen de gestionar el trànsit de dades a la xa
 ![router](./media/router.png)
 
 > Router. Atribució: [tp-link](https://www.tp-link.com)
+
+### Elements estructurals
+
+Us imagineu una xarxa local sense cap organització? Els cables estirats per terra, els dispositius apilats sense ordre i sense protecció, etc. Seria un caos i seria molt difícil de mantenir i solucionar problemes.
+
+![Caos a la xarxa local](./media/caos.png)
+
+> Exemple de caos a la xarxa local. Atribució: Imatge generada amb Google Gemini.
+
+Per tant, una xarxa local necessita elements estructurals que permetin la distribució i connexió dels dispositius des d'un punt de vista físic. Aquests elements inclouen:
+
+#### Repartidors
+
+Són els armaris o racks on s'instal·len els dispositius de xarxa (switch, router, etc.) i on es connecten els cables de la xarxa local. Això permet una organització i gestió eficient del cablejat i dels dispositius de la xarxa local.
+
+![Repartidor](./media/repartidor.png)
+
+> Repartidors. Atribució: [Cableado Estructurado Perú](https://cableadoestructurado.pe/mantenimiento-y-organizacion-de-racks-claves-para-un-cableado-estructurado-eficiente/)
+
+#### Elements d’interconnexió
+
+Als repartidors arribaran els cables provinent dels diferents punts de la xarxa local. Aquests cables s'han de connectar als dispositius de xarxa i per això s'utilitzen elements d'interconnexió com ara panells de connexió (patch panels) o regletes de connexió que es trobaran als repartidors.
+
+Aquests elements intermedis permeten una connexió ordenada i fàcil de gestionar, ja que els cables es poden connectar i desconnectar sense haver de manipular directament els dispositius de xarxa.
+
+Per una correcta organització, conjuntament amb els panells, es disposaran passacables i guies de cablejat que permeten mantenir els cables ordenats i protegits.
+
+![Panell de connexió](./media/panel.png)
+
+> Panell de connexió. Atribució: [Eziblank](https://eziblank.com/blog/2022/11/29/patch-panel-what-it-is-and-why-your-data-center-needs-it/)
+
+#### Conductes pel cablejat
+
+Ja us podeu imaginar que una xarxa els cables no poden anar per qualsevol lloc, sinó que han d'estar protegits i organitzats. Per això s'utilitzen conductes pel cablejat com ara canaletes, tubs o conduccions aèries o subterrànies. Aquests conductes permeten una instal·lació segura i ordenada del cablejat, evitant danys als cables i facilitant el manteniment de la xarxa local.
+
+![Conductes pel cablejat](./media/conductes.png)
+
+> Conductes pel cablejat. Atribució: Imatge generada amb Google Gemini.
