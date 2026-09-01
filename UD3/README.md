@@ -6,7 +6,7 @@ RA2. Desplega el cablejat d'una xarxa local interpretant-ne especificacions i ap
 
 Quan parlem de transmissió en el món de les xarxes locals, un punt important és saber com es realitza aquesta transmissió des del punt de vista de l’emissor i el receptor.
 
-Es parla de transmissions:
+Tenint en compte la direcció de la transmissió, podem distingir tres tipus de transmissió:
 
 -**Símplex**: les dades viatgen en un sol sentit. És a dir, hi ha un únic emissor. Exemple: la TV.
 -**Half dúplex**: la informació viatja en els dos sentits, però de manera alternativa. Exemple: els walkie.
@@ -82,7 +82,7 @@ Finalment, Ethernet va passar a un model de transmissió full dúplex, de manera
 - Els camps de tipus i longitud indiquen el tipus de dades que s’estan transmetent i la longitud del camp de dades real (excloent el farciment).
 - La trama conté un camp de control d’errors (FCS, Frame Check Sequence) que permet detectar errors en la transmissió de dades. Aquest camp utilitza un algorisme de detecció d’errors anomenat CRC (Cyclic Redundancy Check).
 
-![Trama Ethernet](./media/Frame.png)
+![Trama Ethernet](./media/frame.png)
 
 ## Elements xarxa local
 
@@ -93,9 +93,9 @@ Una xarxa local està formada per diversos elements, que permeten interconnectar
   - Fibra òptica
 - Connectors.
 - Targetes de xarxa (NIC).
+- Electrònica de xarxa (switch, router).
 - Repartidors (armaris i racks).
 - Elements d’interconnexió.
-- Electrònica de xarxa (switch, router).
 - Conductes pel cablejat.
 
 ### Cablejat: parells de coure trenats
@@ -149,3 +149,41 @@ En aquest vídeo es pot veure el procés de fabricació d’una fibra òptica i 
 A les xarxes Ethernet, les fibres òptiques s'usen en mode símplex, per tant, a l'igual que amb els cables de coure, cal un parell de fibres per establir un enllaç. En altres tipus de xarxa, com les d'operadors de telecomunicacions, es poden utilitzar fibres òptiques en mode dúplex, amb un sol cable de fibra que transporta la llum en ambdós sentits.
 
 ### Connectors
+
+El connector normalitzat pels cables de parells a xarxes locals és el RJ-45 i el RJ-49 que és la versió apantallada. Existeix el GG-45 amb apantallament per les versions de 10G Ethernet en endavant i és compatible amb endolls RJ-45 (cat. 7 i superiors). Altres connectors com el TERA són molt menys populars.
+
+![Connectors RJ-45, GG-45 i TERA](./media/connectors.png)
+
+> Connectors RJ-45, GG-45 i TERA. Atribució: [Certificabos](https://www.certificacabos.com.br/single-post/2020/04/07/Cabo-Categoria-7)
+
+En el cas de la fibra òptica, hi ha molta més diversitat de connectors, però el més habituals en xarxes locals són el MTP/MPO, el SC Duplex i el LC.
+
+![Connectors fibra òptica](./media/connectors_fibra.png)
+
+> Connectors fibra òptica. Atribució: [CRCONNEX](https://www.crconnex.com)
+
+### Adaptadors de xarxa (NIC)
+
+Per tal que els equips puguin connectar-se a la xarxa local, necessiten un adaptador de xarxa (NIC, Network Interface Card). Aquest adaptador pot ser intern, disponible a la placa base o una targeta interna que s’instal·la dins del dispositiu o un adaptador extern que es connecta a través d’un port USB, solució típica per exemple per portàtils que no solen incloure targeta de xarxa amb cable.
+
+L'adaptador ha de ser compatible amb el tipus de cablejat i amb la velocitat de transmissió de la xarxa local. Així tindrem adaptadors per coure RJ-45, GG-45 o de fibra òptica amb el connector corresponent.
+
+![Adaptadors de xarxa](./media/adaptadors.png)
+
+> Adaptadors de xarxa. Atribució: Imatge generada amb Google Gemini.
+
+### Electrònica de xarxa
+
+Són els dispositius que s'encarreguen de gestionar el trànsit de dades a la xarxa local i d'interconnectar els diferents equips.
+
+- El **switch**: és el concentrador de la xarxa local. Rep les dades dels dispositius i les envia només al dispositiu destinatari (usant les adreces MAC). Tots els equips de la xarxa local han d'estar connectats al switch.
+
+![Switch](./media/switch.png)
+
+> Switch. Atribució: [D-Link](https://www.dlink.com/es/es/products/dgs-1210-28)
+
+- El **router**: és el dispositiu que permet connectar la xarxa local amb altres xarxes, com ara Internet. El router s'encarrega de dirigir els paquets de dades entre les diferents xarxes i d'assignar adreces IP als dispositius de la xarxa local.
+
+![router](./media/router.png)
+
+> Router. Atribució: [tp-link](https://www.tp-link.com)
