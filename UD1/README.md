@@ -94,7 +94,12 @@ Topologia és la manera com els dispositius d’una xarxa estan connectats entre
 Una xarxa local està formada per diversos elements que treballen conjuntament per permetre la comunicació i el compartiment de recursos entre els dispositius connectats. A continuació, es descriuen els principals components d’una xarxa local:
 
 - **Dispositius finals**: Són els dispositius que utilitzen els usuaris per accedir a la xarxa i als seus recursos. Aquests poden incloure ordinadors, portàtils, telèfons mòbils, tauletes, impressores, càmeres de seguretat, entre altres. Aquests dispositius són els que generen i reben dades dins de la xarxa.
-- **Dispositius de xarxa**: Són els dispositius que faciliten la comunicació entre els dispositius finals i gestionen el trànsit de dades dins de la xarxa. Alguns exemples inclouen el switch, el router o el punt d'accés sense fils (AP). Aquests dispositius permeten la connexió i la transmissió de dades entre els dispositius finals i altres xarxes, com ara Internet.
+- **Dispositius de xarxa**: Són els dispositius que faciliten la comunicació entre els dispositius finals i gestionen el trànsit de dades dins de la xarxa. Alguns d'aquests elements són:
+
+  - **Switch**: és un dispositiu que connecta diversos dispositius finals dins d’una xarxa local i permet la comunicació entre ells. Actua com a concetrador de dades.
+  - **Router**: és un dispositiu que connecta diferents xarxes entre si, com ara una xarxa local amb Internet. El router dirigeix el trànsit de dades entre les xarxes i assigna adreces IP als dispositius finals.
+  - **Access point (punt d’accés)**: és un dispositiu que permet als dispositius sense fils connectar-se a la xarxa local. L’access point actua com un pont entre la xarxa cablejada i els dispositius sense fils, proporcionant cobertura Wi-Fi dins de l’àrea de la xarxa.
+
 - **Mitjans de transmissió**: Són els canals físics o sense fils a través dels quals es transmeten les dades entre els dispositius de la xarxa. Els mitjans de transmissió determinen la velocitat i la qualitat de la comunicació dins de la xarxa.
 - **Protocols de comunicació**: Són les regles i estàndards que defineixen com es transmeten les dades dins de la xarxa. Aquests protocols asseguren que els dispositius puguin entendre's entre si i permeten la interoperabilitat entre diferents fabricants i tecnologies.
 
