@@ -1,38 +1,69 @@
-# UD2-Elements de la xarxa local
+# UD2-Arquitectura de xarxes
 
-RA2. Desplega el cablejat d'una xarxa local interpretant-ne especificacions i aplicant-hi tècniques de muntatge.
+RA1. Reconeix l'estructura de xarxes locals cablejades analitzant-ne les característiques d'entorns d'aplicació i descrivint-ne la funcionalitat dels seus components.
 
-Criteris Avaluació:
+## El protocols
 
-2.1 Reconeix els principis funcionals de les xarxes locals.
-2.2 Identifica els diferents tipus de xarxes.
-2.3 Diferencia els mitjans de transmissió.
+A la unitat anterior hem vist que els protocols són un conjunt de regles i estàndards que defineixen com es transmeten les dades dins de la xarxa. Aquests protocols asseguren que els dispositius puguin entendre's entre si i permeten la interoperabilitat entre diferents fabricants i tecnologies.
 
-## Conceptes de transmissió de dades
+Això vol dir que els protocols defineixen els diferents aspectes, tant des del punt de vista físic: tipus de connector, tensions de treball, freqüències, com des del punt de vista lògic: com s'organitzen les dades, com es detecten i corregeixen errors, com es gestiona el flux d'informació, etc.
 
-Quan parlem de transmissió en el món de les xarxes locals, un punt important és saber com es realitza aquesta transmissió des del punt de vista de l’emissor i el receptor.
+### Model de capes
 
-Parlem de tipus de transmissió en funció del sentit en què viatgen les dades:
+És evident que amb tants aspectes a considerar i que tenen relació entre sí, els protocols poden ser extremadament complicats de crear i evolucionar. Per això, s'utilitza un **model de capes** que permet dividir la complexitat del sistema en diferents capes, on cada capa té una funció específica i es comunica amb les capes adjacents. D'aquesta manera, es poden desenvolupar protocols de manera més senzilla i modular.
 
-- **Símplex**: les dades viatgen en un sol sentit. És a dir, hi ha un únic emissor. Exemple: la TV.
-- **Half dúplex**: la informació viatja en els dos sentits, però de manera alternativa. Exemple: els walkie.
-- **Full dúplex**: les dades s’envien en els dos sentits i de forma simultània. Exemple: el telèfon.
+> 💡Per entendre una mica millor aquesta idea, penseu com organitzaríau la comunicació al següent escenari: "dos pintors de finals del s.XIX, un de francès que viu a Londres i un de rus, que viu a Nova York, volen intercanviar opinions i idees sobre pintura usant el telègraf. Cap d'ells parla més que el seu idioma natal i els telegrafistes només accepten missatges en anglès".
 
-La velocitat de transmissió és la quantitat de bits que es poden enviar per unitat de temps de forma efectiva. Aquesta velocitat es mesura en bits per segon (bps). Els múltiples de bits per segon són: Kbps (kilobits per segon), Mbps (megabits per segon) i Gbps (gigabits per segon), que corresponen a 1.000, 1.000.000 i 1000.000.000 bits per segon, respectivament.
+El principi de funcionament d'un model per capes és força senzill:
 
-> ❗Cal vigilar perquè quan es parla de memòria o emmagatzament, es parla de bytes (B), que són 8 bits i els múltiples són KB, MB i GB, que ja són 1.024, 1.048.576 i 1.073.741.824 bytes, respectivament (1 KB = 1.024 B, 1 MB = 1.024 KB, 1 GB = 1.024 MB), perquè es treballa amb potències de 2. Això sovint causa confusió entre els dos sistemes de prefixes.
+- Cada capa té una funció específica i es comunica amb les capes adjacents.
+- Cada capa només coneix la seva pròpia funció i no té coneixement de les funcions de les altres capes.
+- Cada capa utilitza els serveis de la capa inferior i ofereix serveis a la capa superior.
+- Cada capa pot ser desenvolupada i modificada de manera independent, sempre que es mantingui la interfície amb les capes adjacents.
 
-Un altre concepte important és l’**ample de banda**, que és la capacitat màxima de transmissió d’un canal de comunicació. En el cas de les transmissions digitals, l’ample de banda es mesura en bits per segon (bps) i és la quantitat màxima de bits que es poden transmetre per unitat de temps. L'ample de banda depén bàsicament de les caractarístiques del mitjà de transmissió i de la tecnologia utilitzada. Per exemple, un cable de coure té un ample de banda menor que un cable de fibra òptica, mentre que la velocitat de transmissió depèn de la tecnologia utilitzada (protocols de comunicació).
+Al conjunt de protocols que operen a tots els nivells de l'arquitectura de xarxa se l'anomena **pila de protocols**. Els dos models més importants són el model OSI (Open Systems Interconnection) i el model TCP/IP (Transmission Control Protocol/Internet Protocol).
 
-## Normalització de les xarxes locals
+#### Model de referència OSI
 
-La normalització és un procés que té com a objectiu establir un conjunt de normes i estàndards per a un determinat àmbit. En el cas de les xarxes locals, la normalització és important perquè permet que els diferents dispositius i tecnologies puguin comunicar-se entre si de manera eficient i sense problemes de compatibilitat.
+És un model teòric, és a dir, no és un model real que s'implementi en la pràctica, però serveix com a referència per entendre i analitzar el funcionament de les xarxes. Va ser definit entre 1977 i 1984 per la ISO (International Standards Organization) per promoure la creació d'estàndards de fabricant independents.
 
-Des del punt de vista de normalizació parlem de:
+Defineix 7 capes, la més baixa relacionada amb aspectes físics, la més alta relacionada amb la interacció amb els usuaris.
 
-- **Estàndards de iure**: són aquells que han estat aprovats per una organització oficial i són d'obligat compliment. Aquests estàndards els defineixen organismes de normalització com l’**ISO (International Organization for Standardization)**, que és una organització internacional que estableix estàndards per a diferents àmbits, incloent-hi les xarxes locals. A nivell local, cada país té el seu propi organisme de normalització, com ara l’**AENOR (Asociación Española de Normalización y Certificación)** a Espanya, que és una organització que estableix estàndards per a diferents àmbits, incloent-hi les xarxes locals. Per exemple, si un equip WiFi ha de seguir les normatives definides.
+- **Capa física**: defineix les característiques elèctriques, mecàniques i funcionals per activar, mantenir i desactivar la connexió física entre sistemes finals. Aquesta capa s'encarrega de la transmissió de bits a través d'un medi físic.
+- **Capa de connexió de dades o enllaç**: proporciona la transferència fiable de dades entre dos nodes connectats directament. Aquesta capa s'encarrega de la detecció i correcció d'errors, així com del control del flux de dades.
+- **Capa de xarxa**: s'encarrega de determinar la ruta que les dades han de seguir per arribar al seu destí. Aquesta capa s'ocupa de l'adreçament i encaminament dels paquets de dades.
+- **Capa de transport**: proporciona la transferència fiable de dades entre sistemes finals. Aquesta capa s'encarrega de la segmentació i reassemblatge de les dades, així com del control de flux i la detecció d'errors.
+- **Capa de sessió**: estableix, gestiona i finalitza les connexions entre aplicacions. Aquesta capa s'encarrega de la sincronització i control de diàlegs entre aplicacions.
+- **Capa de presentació**: s'encarrega de la representació de les dades, la codificació i la compressió. Aquesta capa assegura que les dades siguin comprensibles per les aplicacions.
+- **Capa d'aplicació**: proporciona serveis de xarxa directament a les aplicacions dels usuaris. Aquesta capa s'encarrega de la interacció amb els usuaris i de proporcionar serveis com el correu electrònic, la transferència de fitxers i la navegació web.
 
-- **Estàndards de facto**: són aquells que s’han establert per la pràctica i l’ús generalitzat d’una tecnologia o producte, encara que no estiguin oficialment reconeguts per una organització de normalització. Aquests estàndards són importants perquè permeten que els diferents dispositius i tecnologies puguin comunicar-se entre si de manera eficient i sense problemes de compatibilitat. Per exemple, l'estàndard de facto per la comunicació en xarxa és la pila TCP/IP (Transmission Control Protocol/Internet Protocol), que és un conjunt de protocols de comunicació utilitzats per a la transmissió de dades a través d’Internet i altres xarxes. És a dir, en teoria, podem triar diverses opcions, però el mercat ha acabat imposant una que és la que s’utilitza.
+![Model de referència OSI](./media/osi.png)
 
-Hi ha una sèrie d’organismes que s’encarreguen definir diferents normes i estàndards, com ara l’**IEEE (Institute of Electrical and Electronics Engineers)**, que és qui habitualment defineix els estàndards de xarxes, però també l’**ITU (International Telecommunication Union)**, que és una agència especialitzada de les Nacions Unides que estableix estàndards per a les telecomunicacions i les tecnologies de la informació i la comunicació. A més, hi ha altres organismes com la **TIA/EIA (Telecommunications Industry Association/Electronic Industries Alliance)**, que és una associació que tambéestableix estàndards per a les telecomunicacions i les tecnologies de la informació i la comunicació.
+> Model de referència OSI. Atribució: [Neos Networks](https://neosnetworks.com/resources/blog/what-is-osi-model/)
 
+A cada capa, el PDU (“Protocol Data Unit”) o unitat de dades del protocol té un nom i una mida específica (bit, trama, paquet, segment, etc). Cada capa afegeix una capçalera al seu PDU, que conté informació de control i gestió necessària per a la seva funció.
+
+Una capa empaqueta el PDU de la capa superior dins del seu propi, sense modificar-lo, és el que s'anomena **encapsulació de les dades**.
+
+> 💡Podeu pensar fent una analogia a com funciona quan compreu un producte a una plataforma online: el producte s'empaqueta a una caixa o sobre, que al seu torn s'empaqueta dins d'una altra caixa més gran (agrupant paquets per província), aquestes caixes es fiquen dins un contenidor, i aquest contenidor es transporta, per exemple, en vaixell fins al port de destinació, on es descarrega, un cop a l'agència, el contenidor s'obre i les diferents caixes s'envien a les diferents agències provincials, on s'obren les caixes i es reparteixen els paquets als usuaris que, finalment, obren el paquet i poden gaudir del producte que han comprat.
+
+#### Pila de protocols TCP/IP
+
+Aquesta pila de protocols sí que és d'ús real, ja que és la que s'utilitza a Internet i s'ha convertit en l'estàndard de facto per a la comunicació entre xarxes. Va ser desenvolupada a principis dels anys 70 per DARPA (Defense Advanced Research Projects Agency) i es basa en un model de 4 capes:
+
+- **Capa d'accés a la xarxa**: combina les funcions de les capes física i de connexió de dades del model OSI. Aquesta capa s'encarrega de la transmissió de bits a través d'un medi físic i de la detecció i correcció d'errors.
+- **Capa d'internet**: s'encarrega de l'adreçament i encaminament dels paquets de dades. Aquesta capa utilitza el protocol IP (Internet Protocol) per identificar els dispositius a la xarxa i determinar la ruta que les dades han de seguir.
+- **Capa de transport**: proporciona la transferència fiable de dades entre sistemes finals. Aquesta capa utilitza protocols com TCP (Transmission Control Protocol) i UDP (User Datagram Protocol) per gestionar la segmentació i reassemblatge de les dades, així com el control de flux i la detecció d'errors.
+- **Capa d'aplicació**: proporciona serveis de xarxa directament a les aplicacions dels usuaris. Aquesta capa inclou protocols com HTTP (Hypertext Transfer Protocol), FTP (File Transfer Protocol), SMTP (Simple Mail Transfer Protocol) i DNS (Domain Name System), entre altres.
+
+![Model de referència TCP/IP vs OSI](./media/osi-tcp.png)
+
+> Comparativa entre el model OSI i el model TCP/IP. Atribució: [Neos Networks](https://neosnetworks.com/resources/blog/what-is-osi-model/)
+
+#### Altres famílies de protocols
+
+Tot i que el model TCP/IP és el més utilitzat, i s'ha acabat imposant a tota la resta (no seguir-lo implicaria incompatibilitat amb Internet), van existir altres piles de protocols que van ser populars en el món de les xarxes locals quan aquestes no es connectaven a l'exterior. Algunes d'aquestes piles de protocols són:
+
+- **AppleTalk**: era el protocol de xarxa desenvolupat per Apple per a les seves computadores Macintosh. Va ser molt popular als anys 80 i 90, però va ser descontinuat a principis dels anys 2000.
+
+- **IPX/SPX (Novell NetWare)**: era una pila de protocols desenvolupada per Novell per a les seves xarxes locals i que en seu moment, va ser un autèntic estàndard en entorns corporatius. La popularització de TCP/IP i la seva adopció per part de Microsoft amb Windows 95, va fer que IPX/SPX perdés rellevància i acabés desapareixent.

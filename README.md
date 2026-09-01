@@ -9,7 +9,7 @@ En aquest repositori es troben els materials teòrics (apunts) corresponents als
 ## Taula de continguts
 
 - [UD1: Introducció a les xarxes](./UD1/README.md)
-- [UD2: Elements d'una xarxa local](./UD2/README.md)
+- [UD2: Arquitectura de xarxes](./UD2/README.md)
 
 ## Llicència
 

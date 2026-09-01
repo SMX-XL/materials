@@ -2,17 +2,6 @@
 
 RA1. Reconeix l'estructura de xarxes locals cablejades analitzant-ne les característiques d'entorns d'aplicació i descrivint-ne la funcionalitat dels seus components.
 
-Criteris d'avaluació:
-
-1.1 Descriu els principis de funcionament de les xarxes locals.
-1.2 Identifica els diferents tipus de xarxes.
-1.3 Descriu els elements de la xarxa local i la seva funció.
-1.4 Identifica i classifica els mitjans de transmissió.
-1.5 Reconeix el mapa físic de la xarxa local.
-1.6 Utilitza aplicacions per representar el mapa físic de la xarxa local.
-1.7 Reconeix les diferents topologies de xarxa.
-1.8 Identifica estructures alternatives.
-
 ## Xarxes de computadors
 
 Conjunt de dos o més equips informàtics, no cal que siguin els típics ordinadors que teniu en ment, poden ser mòbils, impressores, smartTV, etc. connectats entre sí per proporcionar:
@@ -39,7 +28,7 @@ Això era una forma molt limitada, de manera que a Estats Units a la dècada del
 
 > 💡ARPANET (Advanced Research Projects Agency Network) era una xarxa de comunicacions que va ser creada per l'Agència de Projectes de Recerca Avançada del Departament de Defensa dels Estats Units (ARPA) i va fer la primera transmissió de dades entre ordinadors el 29 d'octubre de 1969 entre UCLA i Stanford.
 
-## Classificació de les xarxes
+## Classificació de les xarxes segons la seva mida
 
 A l’hora de classificar les xarxes podem usar diversos criteris, un d’habitual és la mida de la xarxa, és a dir, ens fixarem en quina extensió geogràfica està coberta per la xarxa. Aquesta classificació és significativa, perquè la mida de la xarxa determina aspectes claus de la tecnologia de la xarxa.
 
@@ -59,7 +48,13 @@ Atenent a la mida de la xarxa, podem distingir:
 
 Aquest mòdul se centra específicament en les xarxes d’àrea local (LAN) i per tant, a partir d’ara, quan parlem de xarxa, ens referirem a una xarxa local (LAN).
 
-## Topologies de xarxa
+## Classificació de les xarxes segons el mitjà de transmissió
+
+- **Mitjans guiats**: la transmissió es produeix a través de un medi tancat, com ara cables de coure o fibra òptica, que actuen com canonades per on viatgen les dades. En el cas de les xarxes locals, els mitjans guiats seran cables de coure i fibra òptica.
+
+- **Mitjans no guiats**: la transmissió es produeix a través de un medi sense fils, bàsicament l'aire, on les dades viatgen en forma d'ones de ràdio que es propaguen a través de l'espai, com ara el WiFi o el Bluetooth.
+
+## Classificació de les xarxes segons la seva topologia
 
 Topologia és la manera com els dispositius d’una xarxa estan connectats entre si. La topologia determina com es comuniquen els dispositius, com es transmeten les dades i com es gestiona la xarxa. Hi ha diverses topologies de xarxa, cadascuna amb les seves característiques i avantatges.
 
@@ -100,15 +95,38 @@ Una xarxa local està formada per diversos elements que treballen conjuntament p
 
 - **Dispositius finals**: Són els dispositius que utilitzen els usuaris per accedir a la xarxa i als seus recursos. Aquests poden incloure ordinadors, portàtils, telèfons mòbils, tauletes, impressores, càmeres de seguretat, entre altres. Aquests dispositius són els que generen i reben dades dins de la xarxa.
 - **Dispositius de xarxa**: Són els dispositius que faciliten la comunicació entre els dispositius finals i gestionen el trànsit de dades dins de la xarxa. Alguns exemples inclouen el switch, el router o el punt d'accés sense fils (AP). Aquests dispositius permeten la connexió i la transmissió de dades entre els dispositius finals i altres xarxes, com ara Internet.
-- **Mitjans de transmissió**: Són els canals físics o sense fils a través dels quals es transmeten les dades entre els dispositius de la xarxa. Aquests poden ser cables o connexions sense fils, com ara Wi-Fi o Bluetooth. Els mitjans de transmissió determinen la velocitat i la qualitat de la comunicació dins de la xarxa.
+- **Mitjans de transmissió**: Són els canals físics o sense fils a través dels quals es transmeten les dades entre els dispositius de la xarxa. Els mitjans de transmissió determinen la velocitat i la qualitat de la comunicació dins de la xarxa.
 - **Protocols de comunicació**: Són les regles i estàndards que defineixen com es transmeten les dades dins de la xarxa. Aquests protocols asseguren que els dispositius puguin entendre's entre si i permeten la interoperabilitat entre diferents fabricants i tecnologies.
 
+## Estàndards de xarxes locals
+
+A les primeres xarxes informàtiques, cada empresa utilitzava els seus propis estàndards per al disseny i funcionament de la xarxa en els seus productes. Quan va ser necessari connectar xarxes de diferents proveïdors, van sorgir problemes: els sistemes de transmissió no eren compatibles.
+
+Calia desfer-se de tota la instal·lació prèvia i configurar noves xarxes, totes elles del mateix tipus. Una altra solució possible va ser desenvolupar equips capaços de convertir i adaptar senyals de comunicació entre xarxes, però aquesta solució també resultava costosa i complexa. Per això, es va veure la necessitat de definir un conjunt d'estàndards estandarditzats, que permetran als fabricants i proveïdors desenvolupar productes que satisfacin les necessitats dels clients en relació amb la interconnexió de la xarxa.
+
+Els estàndards són imprescindibles per garantir la compatibilitat entre els diferents dispositius i tecnologies utilitzades en les xarxes locals. Aquests estàndards defineixen aspectes com ara els protocols de comunicació, les velocitats de transmissió, els tipus de connectors i cables, així com altres característiques tècniques que asseguren que els dispositius puguin comunicar-se entre si de manera eficient i sense problemes de compatibilitat.
+
+Habitualment, es parla de dos tipus d'estàndards:
+
+- **De facto**: també anomenats estàndards de mercat, són aquells que s'han imposat per l'ús generalitzat i l'acceptació dels usuaris, encara que no estiguin formalment reconeguts per una organització oficial. Aquests estàndards poden sorgir de la popularitat d'un producte o tecnologia específica, i poden ser adoptats per altres fabricants com a referència.
+
+- **De iure**: també anomenats estàndards oficials, són aquells que han estat formalment reconeguts i adoptats per una organització o institució oficial. Aquests estàndards són sovint el resultat de processos de normalització i tenen un caràcter legal i obligatori en determinades àrees o sectors.
+
+I qui organitza i regula aquests estàndards? Doncs hi ha diverses organitzacions que s'encarreguen de desenvolupar i mantenir els estàndards de xarxes tant. Algunes de les més rellevants a nivell d'estàndards normatius són:
+
+- **ISO (International Organization for Standardization)**: és una organització internacional que desenvolupa i publica estàndards per a una àmplia gamma d'indústries i sectors.
+- **EN (European Norms)**: és un organisme europeu que estableix estàndards per a productes i serveis dins de la Unió Europea. A Espanya, l'Associació Espanyola de Normalització (UNE) és l'encarregada de desenvolupar i promoure els estàndards EN.
+- **ANSI (American National Standards Institute)**: és una organització sense ànim de lucre que coordina el desenvolupament d'estàndards a nivell nacional als Estats Units.
+- **ITU-T (International Telecommunication Union - Telecommunication Standardization Sector)**: és una agència especialitzada de les Nacions Unides que estableix estàndards per a les tecnologies de la informació i la comunicació.
+
+Per una altra banda, per ajudar a la compatibilitat, hi ha organitzacions i associacions que fixen els estàndards de facto, com ara:
+
+- **ISOC (Internet Society)**, **IAB (Internet Architecture Board)** i **IETF (Internet Engineering Task Force)**: són organitzacions sense ànim de lucre que promouen i desenvolupen estàndards i protocols per a Internet.
+- **IEEE (Institute of Electrical and Electronics Engineers)**: és una organització professional que desenvolupa estàndards per a una àmplia gamma de tecnologies, incloent-hi les xarxes locals i les comunicacions sense fils.
+- **EIA/TIA (Electronic Industries Alliance / Telecommunications Industry Association)**: són organitzacions que desenvolupen estàndards per a la indústria electrònica i de telecomunicacions, incloent-hi els estàndards per a cables i connectors utilitzats en xarxes locals.
+- **Wi-Fi Alliance**: és una organització que promou i certifica la compatibilitat dels dispositius sense fils amb la tecnologia Wi-Fi, establint estàndards per a la interoperabilitat i el rendiment de les xarxes sense fils.
+
 ## Mapa físic de la xarxa local
-
-S'utilitza per representar la ubicació dels dispositius i el cablejat de xarxa dins d'un edifici. Per tant, aquest diagrama haurà de mostrar:
-
-- Dispositius connectats.
-- Rutes del cable (canalitzacions).
 
 És una eina molt important pel manteniment d’una xarxa local, perquè permet localitzar els diferents equips i conèixer les rutes que segueix el cablejat. Això simplifica molt la tasca de localitzar i resoldre problemes de connexió, així com planificar ampliacions o modificacions en la xarxa.
 
@@ -118,5 +136,3 @@ S'utilitza per representar la ubicació dels dispositius i el cablejat de xarxa 
 ### Com crear un mapa físic de la xarxa local
 
 El primer pas és recopilar la informació (localització equips, conductes, etc.) A continuació usar una eina de disseny per elaborar un plànol de la planta on es troba la xarxa. Es poden usar eines com: **Microsoft Visio**, **LucidChart**, etc. En aquest pas, s'ubiquen els diferents elements (ordinadors, impressores, etc.) i les conduccions del cable.
-
-Com veurem a les properes unitats, el cablejat de xarxa acaba convergint cap un element on es troben els concentradors i altres elements de la xarxa, anomenat repartidor.
