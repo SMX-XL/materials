@@ -138,12 +138,12 @@ En aquest vídeo es pot veure el procés de fabricació d’una fibra òptica i 
 
 1. **Fibra monomode**: té un nucli molt petit (uns 9 micròmetres) i permet la propagació d’un únic feix de llum. Això fa que la dispersió sigui mínima i que es puguin aconseguir distàncies molt llargues (fins a 100 km o més) amb una gran amplada de banda. Com a font de llum necessita un làser, que és més car i complex que els LEDs utilitzats en fibra multimode.
 
-    ![Fibra monomode](./media/fibra_monomode.png)
+    ![Fibra monomode](./media/monomode.png)
     > Fibra monomode. Atribució: [CRXCONNEC](https://www.crxconec.com)
 
 2. **Fibra multimode**: té un nucli més gran (de 50 o 62,5 micròmetres) i permet la propagació de diversos feixos de llum. Això provoca una major dispersió i limita la distància de transmissió (en xarxes locals per sota del 500 m) i l’amplada de banda. Com a font de llum utilitza LEDs, que són més econòmics i fàcils d’utilitzar que els làsers.
 
-    ![Fibra multimode](./media/fibra_multimode.png)
+    ![Fibra multimode](./media/multimode.png)
      > Fibra multimode. Atribució: [CRXCONNEC](https://www.crxconec.com)
 
 A les xarxes Ethernet, les fibres òptiques s'usen en mode símplex, per tant, a l'igual que amb els cables de coure, cal un parell de fibres per establir un enllaç. En altres tipus de xarxa, com les d'operadors de telecomunicacions, es poden utilitzar fibres òptiques en mode dúplex, amb un sol cable de fibra que transporta la llum en ambdós sentits.
