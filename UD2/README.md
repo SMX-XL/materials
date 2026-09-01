@@ -62,8 +62,10 @@ Aquesta pila de protocols sí que és d'ús real, ja que és la que s'utilitza a
 
 #### Altres famílies de protocols
 
-Tot i que el model TCP/IP és el més utilitzat, i s'ha acabat imposant a tota la resta (no seguir-lo implicaria incompatibilitat amb Internet), van existir altres piles de protocols que van ser populars en el món de les xarxes locals quan aquestes no es connectaven a l'exterior. Algunes d'aquestes piles de protocols són:
+Tot i que el model TCP/IP és el més utilitzat, i s'ha acabat imposant a tota la resta (no seguir-lo implicaria incompatibilitat amb Internet), no detalla els protocols de la capa d'accés a la xarxa, de manera que existeixen diferents piles de protocols que defineixen els protocols a nivell físic (capa 1 OSI) i de connexió de dades (capa 2 OSI). Alguns dels més importants són:
 
-- **AppleTalk**: era el protocol de xarxa desenvolupat per Apple per a les seves computadores Macintosh. Va ser molt popular als anys 80 i 90, però va ser descontinuat a principis dels anys 2000.
+- **Ethernet IEEE 802.3**: és la tecnologia de xarxa local més utilitzada actualment.
 
-- **IPX/SPX (Novell NetWare)**: era una pila de protocols desenvolupada per Novell per a les seves xarxes locals i que en seu moment, va ser un autèntic estàndard en entorns corporatius. La popularització de TCP/IP i la seva adopció per part de Microsoft amb Windows 95, va fer que IPX/SPX perdés rellevància i acabés desapareixent.
+- **Wi-Fi IEEE 802.11**: conjunt de protocols per a xarxes sense fils, que permeten la connexió de dispositius a Internet i a xarxes locals sense necessitat de cables.
+
+Altres piles de protocols com Token Ring, AppleTalk o Novell IPX/SPX han quedat obsoletes i ja no s'utilitzen en entorns de xarxa moderns.
