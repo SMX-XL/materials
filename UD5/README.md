@@ -21,7 +21,7 @@ Per evitar aquests problemes, apareix la idea del **cablatge estructurat**, que 
 - Permetre ampliacions i modificacions futures del sistema.
 - Facilitar la localització de les avaries.
 
-## Normatives
+## Normativa aplicable
 
 Evidentment si es tracta d'un mètode sistemàtic, cal establir unes normes que regulin la instal·lació.Aquestes normes són les **normatives de cablatge estructurat**, existeixen diverses, en funció del tipus de cablejat i de la zona geogràfica. Les més conegudes són:
 
@@ -112,6 +112,17 @@ Aquestes canalitzacions poden anar per les parets (encastades o per superfície)
 
 A més, cal evitar les interferències electromagnètiques, per la qual cosa s’ha de procurar que el cablejat no passi a prop de fonts d’interferència com ara motors, fluorescents, transformadors, etc. i en el cas de les pròpies canalitzacions, s'ha de separar el cablejat de dades del cablejat elèctric, almenys fins els darrers 15 m. abans arribar a la presa de treball.
 
+## Etiquetatge del cablejat
+
+Per organització i manteniment, és important etiquetar correctament els cables i els punts de connexió. Cada cable ha d’estar identificat amb un codi que indiqui el seu origen i destí, així com la seva funció (dades, veu, etc.). Les preses de xarxa i els panells de connexió també han d’estar etiquetats de manera clara.
+
+Existeixen diversos criteris d’etiquetatge, però un dels més habituals és el següent:
+
+| Element           | Etiqueta                                    |
+| ---               | ---                                         |
+| Cable horitzontal | H-<número de planta>-<número de presa>      |
+| Cable vertical    | V-<número de planta>-<número de repartidor> |
+
 ## Els tirantets o patchcords
 
 Són cables de curta longitud (normalment 0,5 m a 3 m) que serveixen per connectar els equips de l’usuari final amb la presa de xarxa i el panell del repartidor amb l’equip actiu (switch). Aquests cables han de ser de la mateixa categoria que el cablejat horitzontal utilitzat i preferentment del mateix tipus de cable (U/UTP, FTP...).
@@ -122,7 +133,7 @@ Els tirantets poden ser:
 
 - **Directes**: Els fils del connector segueixen l'ordre de colors de l'estàndard T568B en ambdós extrems. Serveixen per connectar els equips a les preses de xarxa i els panells de connexió als equips actius (switchs).
 
-- **Creuats**: Els fils del connector segueixen l'ordre de colors de l'estàndard T568B en un extrem i l'ordre de colors de l'estàndard T568A a l'altre extrem. Serveixen per connectar directament dos equips sense necessitat d'un switch intermig, com ara dos ordinadors. Actualment, la majoria d'equips actius tenen ports amb detecció automàtica (Auto MDI-X), de manera que poden connectar-se amb un cable directe, sense necessitat d'un cable creuat.
+- **Creuats**: s'usava per connectar directament sense switch dos ordinadors o dos routers, per exemple. Actualment, amb els equips moderns, que tenen ports amb auto MDI-X, ja no és necessari utilitzar cables creuats.
 
 De la mateixa manera, també existeixen tirantets de fibra òptica, que poden ser multimode o monomode, amb connectors LC, SC o ST, segons el tipus d'equip i la distància de transmissió. En aquest cas, sí que és totalment recomanable comprar-los ja fets, amb la longitud adequada i amb els connectors ja muntats, ja que a part de ser més complexos de muntar, l'equipament necessari és més car.
 
@@ -161,7 +172,7 @@ En el cas dels connectors femella, la informació de colors es manté, però el 
 
 En aquest vídeo, teniu el procés de muntatge d'un connector RJ-45 pas a pas: [Muntatge connector RJ-45](https://youtu.be/XpeKWEXw7HE?si=umPZLRX3_czV4CFs)
 
-## Certificació del cablatge
+## Certificació de la instal·lació
 
 Comprovació funcionament i adequació a classe. Cal fer les mesures de tots els enllaços instal·lats (horitzontals i troncals).
 
