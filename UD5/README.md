@@ -111,3 +111,66 @@ El cablejat obligatòriament s’ha de distribuir per canalitzacions:
 Aquestes canalitzacions poden anar per les parets (encastades o per superfície), pel sostre (sostre tècnic) o pel terra (terra tècnic). En qualsevol cas, s’ha de procurar que el recorregut sigui el més curt possible, però de forma longitudinal o transversal a la superfície, evitant corbes i girs bruscos.
 
 A més, cal evitar les interferències electromagnètiques, per la qual cosa s’ha de procurar que el cablejat no passi a prop de fonts d’interferència com ara motors, fluorescents, transformadors, etc. i en el cas de les pròpies canalitzacions, s'ha de separar el cablejat de dades del cablejat elèctric, almenys fins els darrers 15 m. abans arribar a la presa de treball.
+
+## Els tirantets o patchcords
+
+Són cables de curta longitud (normalment 0,5 m a 3 m) que serveixen per connectar els equips de l’usuari final amb la presa de xarxa i el panell del repartidor amb l’equip actiu (switch). Aquests cables han de ser de la mateixa categoria que el cablejat horitzontal utilitzat i preferentment del mateix tipus de cable (U/UTP, FTP...).
+
+Tot i que es poden construir in situ (de fet, és un activitat recomanada per a qualsevol tècnic de xarxes), és habitual comprar-los ja fets, amb la longitud adequada i amb els connectors RJ-45 ja muntats, d'aquesta manera se n'assegura la qualitat i el correcte muntatge dels connectors, en estar certificats per la categoria del cablejat.
+
+Els tirantets poden ser:
+
+- **Directes**: Els fils del connector segueixen l'ordre de colors de l'estàndard T568B en ambdós extrems. Serveixen per connectar els equips a les preses de xarxa i els panells de connexió als equips actius (switchs).
+
+- **Creuats**: Els fils del connector segueixen l'ordre de colors de l'estàndard T568B en un extrem i l'ordre de colors de l'estàndard T568A a l'altre extrem. Serveixen per connectar directament dos equips sense necessitat d'un switch intermig, com ara dos ordinadors. Actualment, la majoria d'equips actius tenen ports amb detecció automàtica (Auto MDI-X), de manera que poden connectar-se amb un cable directe, sense necessitat d'un cable creuat.
+
+De la mateixa manera, també existeixen tirantets de fibra òptica, que poden ser multimode o monomode, amb connectors LC, SC o ST, segons el tipus d'equip i la distància de transmissió. En aquest cas, sí que és totalment recomanable comprar-los ja fets, amb la longitud adequada i amb els connectors ja muntats, ja que a part de ser més complexos de muntar, l'equipament necessari és més car.
+
+## Connectors i preses de xarxa
+
+Els connectors RJ-45 són els més habituals per a la connexió de xarxes locals cablejades. Aquests connectors permeten connectar els cables UTP o FTP a les preses de xarxa i als panells de connexió. A l'hora de muntar un connector RJ-45, cal seguir un ordre de connexió dels fils segons l'estàndard que s'estigui utilitzant, actualment el T568B.
+
+El patillatge de colors segons l'estàndard T568B és el següent:
+
+| Pin | Color del fil |
+| --- | --- |
+| 1 | Blanc/Ataronjat |
+| 2 | Ataronjat |
+| 3 | Blanc/Verd |
+| 4 | Blau |
+| 5 | Blanc/Blau |
+| 6 | Verd |
+| 7 | Blanc/Marró |
+| 8 | Marró |
+
+![Patillatge de colors del connector RJ-45](./media/rj45-pinout.png)
+
+> Patillatge de colors del connector RJ-45 segons l'estàndard T568B. Atribució: [The Tech Mentor](https://www.thetechmentor.com/posts/easy-rj45-wiring-with-rj45-pinout-pic/)
+
+Per a muntar un connector RJ-45, cal pelar el cable UTP o FTP, separar els fils i col·locar-los en l'ordre correcte dins del connector, després s'ha de prémer el connector amb una eina especial (crimpadora) per fixar els fils al connector.
+
+![Crimpadora per a connectors RJ-45](./media/crimpadora.png)
+
+> Crimpadora per a connectors RJ-45. Atribució: [TodoElectronica](https://www.todoelectronica.com/herramienta-especial-de-crimpado-para-conectores-rj45-rj11-rj12-sobre-cable-utp-p-14936.html)
+
+En el cas dels connectors femella, la informació de colors es manté, però el connector té una forma diferent, amb un mecanisme de bloqueig que permet connectar i desconnectar el cable amb facilitat. Aquests connectors femella es troben a les preses de xarxa i als panells de connexió.
+
+![Connector femella RJ-45 autocrimpable](./media/connector-femella.png)
+
+> Connector femella RJ-45 cat 6A. Atribució: [celmad](https://www.celmad.com/producto/conector-rj45-hembra-cat-6a-stp-180o-autocrimpable/)
+
+En aquest vídeo, teniu el procés de muntatge d'un connector RJ-45 pas a pas: [Muntatge connector RJ-45](https://youtu.be/XpeKWEXw7HE?si=umPZLRX3_czV4CFs)
+
+## Certificació del cablatge
+
+Comprovació funcionament i adequació a classe. Cal fer les mesures de tots els enllaços instal·lats (horitzontals i troncals).
+
+![Mesurador de cablatge](./media/certificacio.png)
+
+L'aparell de certificació comprova que el cablejat instal·lat compleix amb els requisits de la normativa corresponent, mesurant paràmetres com la pèrdua d'inserció, la diafonia, la resistència i altres característiques del cablejat.
+
+![Mesurador de cablatge](./media/mesurador.png)
+
+> Fluxe DSX-5000. Atribució: [Fluke Networks](https://www.flukenetworks.com/)
+
+Un dels més populars és el [Fluke DSX-5000](https://www.flukenetworks.com/datacom-cabling/Versiv/dsx-cableanalyzer-series), que permet certificar enllaços de categoria 6A i 8. També existeixen models que permeten certificar enllaços de fibra òptica multimode i monomode, com el [Fluke OptiFiber Pro](https://www.flukenetworks.com/datacom-cabling/fiber-testing/optifiber-pro-otdr).
