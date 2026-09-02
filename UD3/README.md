@@ -220,8 +220,18 @@ Per una correcta organització, conjuntament amb els panells, es disposaran pass
 
 #### Conductes pel cablejat
 
-Ja us podeu imaginar que una xarxa els cables no poden anar per qualsevol lloc, sinó que han d'estar protegits i organitzats. Per això s'utilitzen conductes pel cablejat com ara canaletes, tubs o conduccions aèries o subterrànies. Aquests conductes permeten una instal·lació segura i ordenada del cablejat, evitant danys als cables i facilitant el manteniment de la xarxa local.
+Ja us podeu imaginar que una xarxa els cables no poden anar per qualsevol lloc (enganxats per la paret, tirats a sobre les plaques del fals sostre, etc.), sinó que han d'estar protegits i organitzats. Per això s'utilitzen conduccions aèries, de superfície (parets) o subterrànies (terre tècnic).
+
+Aquests conductes permeten una instal·lació segura i ordenada del cablejat, evitant danys als cables i facilitant el manteniment de la xarxa local.
 
 ![Conductes pel cablejat](./media/conductes.png)
 
 > Conductes pel cablejat. Atribució: Imatge generada amb Google Gemini.
+
+Els tipus de conduccions més habituals són:
+
+- Safates de cablejat: són safates metàl·liques o de plàstic que es poden instal·lar pel sostre, per sota el terre tècnic o per les parets. Són la solució habitual quan el volum de cables és gran. Permet una bona organització dels cables, facilitant l'accés.
+
+- Canaletes: són conductes de plàstic que es poden instal·lar a les parets o mobiliari. Són una bona solució per distribuir el cablejat fins els llocs de treball.
+
+- Tubs: solució similar a la que s'utilitza per les instal·lacions elèctriques o de comunicacions a l'àmbit domèstic. Habitualent tub corrugat de plàstic per la seve flexibilitat, tot i que per conduccions verticals amb molt de cablejat es poden usar tubs rígids. És la solució típica per entorns domèstics o petits despatxos, on el volum de cablejat és reduït i es vol mantenir la instal·lació encastada. Es perd força flexibilitat, perquè els canvis són més complexos.
