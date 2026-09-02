@@ -206,6 +206,16 @@ Són els armaris o racks on s'instal·len els dispositius de xarxa (switch, rout
 
 > Repartidors. Atribució: [Cableado Estructurado Perú](https://cableadoestructurado.pe/mantenimiento-y-organizacion-de-racks-claves-para-un-cableado-estructurado-eficiente/)
 
+Poden ser armaris (tancats) o racks (oberts) en funció de les necessitats de seguretat (en sales dedicades és habitual usar racks i quan el distribuidor s'ha d'instal·lar en un lloc accessible a tothom, com ara un despatx, s'usen armaris tancats amb pany).
+
+Les amplades són estàndards, sent la més habitual la de 19” estàndard o 10” (versió estreta). L’alçada es mira en U,s ( 1,75” o 44,45 mm) que és l’alçada mínima d’un element de rack.
+
+![Amplada rack 19"](./media/rack1.png)
+
+Quant l'alçada, aquesta no s'indica en centímetres, sinó en unitats de rack (U). Cada unitat de rack (1U) té una alçada de 1,75 polzades (44,45 mm). Això permet estandarditzar la mida dels dispositius que s'instal·len en els racks i facilita la seva organització.
+
+![Alçada rack](./media/rack2.png)
+
 #### Elements d’interconnexió
 
 Als repartidors arribaran els cables provinent dels diferents punts de la xarxa local. Aquests cables s'han de connectar als dispositius de xarxa i per això s'utilitzen elements d'interconnexió com ara panells de connexió (patch panels) o regletes de connexió que es trobaran als repartidors.
