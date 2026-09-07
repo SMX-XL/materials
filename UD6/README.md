@@ -102,3 +102,11 @@ Es representen en format decimal amb 4 octets separats per punts, per exemple:
 192.168.1.3
 
 Al principi, les adreces IP es van classificar en classes, que era un forma senzilla de determinar la mida de la xarxa.
+
+Quines classes hi havia?
+
+- Classe A: adreces IP amb el primer octet entre 1 i 126, amb una màscara de xarxa de 255.0.0.0.
+- Classe B: adreces IP amb el primer octet entre 128 i 191, amb una màscara de xarxa de 255.255.0.0.
+- Classe C: adreces IP amb el primer octet entre 192 i 223, amb una màscara de xarxa de 255.255.255.0.
+- Classe D: adreces IP amb el primer octet entre 224 i 239, utilitzades per a transmissió multidestinatària.
+- Classe E: adreces IP amb el primer octet entre 240 i 255, utilitzades per a propòsits experimental.
