@@ -101,12 +101,26 @@ Es representen en format decimal amb 4 octets separats per punts, per exemple:
 
 192.168.1.3
 
-Al principi, les adreces IP es van classificar en classes, que era un forma senzilla de determinar la mida de la xarxa.
+Al principi, les adreces IP es van classificar en classes, que era un forma senzilla de determinar la mida de la xarxa, ja que 
 
 Quines classes hi havia?
 
-- Classe A: adreces IP amb el primer octet entre 1 i 126, amb una màscara de xarxa de 255.0.0.0.
-- Classe B: adreces IP amb el primer octet entre 128 i 191, amb una màscara de xarxa de 255.255.0.0.
-- Classe C: adreces IP amb el primer octet entre 192 i 223, amb una màscara de xarxa de 255.255.255.0.
-- Classe D: adreces IP amb el primer octet entre 224 i 239, utilitzades per a transmissió multidestinatària.
-- Classe E: adreces IP amb el primer octet entre 240 i 255, utilitzades per a propòsits experimentals.
+- Classe A: corresponent a xarxes de mida gran, ja que el primer byte identifica a la xarxa i els tres bytes restants identifiquen als hosts. Les xarxes de classe A, tenen el bit més alt de l'adreça a 0, per tant, el primer byte pot anar de 0 a 127.
+- Classe B: adreces IP amb el primer byte començant amb 10, per tant, el primer byte pot anar de 128 a 191. Aquestes adreces són per a xarxes de mida mitjana, ja que els dos primers bytes identifiquen la xarxa i els dos bytes restants identifiquen als hosts.
+- Classe C: adreces IP amb el primer byte comença per 110, de manera que el primer byte pot anar de 192 a 223. Aquestes adreces són per a xarxes petites, ja que els tres primers bytes identifiquen la xarxa i l'últim byte identifica als hosts.
+- Classe D: adreces IP amb el primer byte entre 224 i 239, utilitzades per a transmissió multicast (és una forma de identificar un grup d'equips).
+- Classe E: adreces IP amb el primer byte entre 240 i 255, utilitzades per a propòsits experimentals.
+
+> 💡 Aquest model de classes es va crear perquè els equips de l'època (routers) tenien una capacitat limitada i identificar la mida de la xarxa mirant l'inici de l'adreça era computacionalment molt senzill.
+
+### Classless Inter-Domain Routing (CIDR)
+
+Durant anys, les xarxes que s'usaven havien de ser d'una de les tres classes indicades A, B o C. Això feia que moltes adreces IP es desaprofitessin, ja que si una xarxa necessitava 300 equips, no podia utilitzar una xarxa de classe C (només permet 254 equips), i havia d'utilitzar una xarxa de classe B (que permet 65.534 equips), desaprofitant moltes adreces.
+
+El CIDR va ser introduït per solucionar aquest problema, permetent assignar adreces IP de manera més eficient i flexible, sense necessitat de seguir les restriccions de les classes.
+
+S'introdueix el concepte de **màscara de subxarxa**, que és un conjunt de bits que indica quina part de l'adreça IP correspon a la xarxa i quina part correspon als hosts. La màscara de subxarxa es representa en format CIDR, que consisteix en escriure l'adreça IP seguida d'una barra i el nombre de bits que corresponen a la xarxa.
+
+Per exemple, l'adreça IP 192.168.1.3/24 representa una adreça IP amb una màscara de subxarxa de 24 bits, que significa que els primers 24 bits corresponen a la xarxa i els últims 8 bits corresponen als hosts.
+
+I com queden les classes? Realment, ja no existeixen, però per costum solen seguir utilitzant-se els termes classe A, B i C per referir-se a xarxes amb màscares de subxarxa de 8, 16 i 24 bits respectivament i que sovint els equips suggereixen com a màscara per defecte quan es configura una adreça IP.
