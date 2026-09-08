@@ -21,7 +21,7 @@ graph TD
     C --> D[Accés a la xarxa]
 ```
 
-Si recordeu, el model OSI de referència té 7 capes, mentre que la pila TCP/IP només en té 4. Això és degut a que algunes de les capes del model OSI s’han agrupat en una sola capa a la pila TCP/IP, bàsicament perquè s'agrupen pel component hardware o sofware que les implementa.
+Si recordeu, el model OSI de referència té 7 capes, mentre que la pila TCP/IP només en té 4. Això és degut a que algunes de les capes del model OSI s’han agrupat en una sola capa a la pila TCP/IP, bàsicament perquè s'agrupen pel component hardware o sotfware que les implementa.
 
 ![Comparació entre el model OSI i la pila TCP/IP](media/osivstcp.png)
 
@@ -61,11 +61,11 @@ Com s'ha dit abans, la funció d'aquesta capa és la de transmetre paquets de da
 
 - Protocol ICMP (Internet Control Message Protocol) que s’encarrega de la gestió d’errors i control de la xarxa.
 
-- Protocol ARP (Address Resolution Protocol) que s’encarrega de resoldre les adreces IP en adreces MAC, actuan d'inferfície amb la capa d'accés a la xarxa.
+- Protocol ARP (Address Resolution Protocol) que s’encarrega de traduir les adreces IP en adreces MAC, actuant com a interfície amb la capa d'accés a la xarxa.
 
 La unitat d'informació d'aquesta capa (PDU) és el **datagrama**, que és un paquet de dades que conté una capçalera amb informació de control i una càrrega útil amb les dades que es volen transmetre. La capçalera del datagrama IP conté informació com l'adreça IP d'origen i destinació, el tipus de protocol de la capa superior, la longitud del datagrama, etc.
 
-Les característiques principals de la transmsissió de dades en aquesta capa són:
+Les característiques principals de la transmissió de dades en aquesta capa són:
 
 - **Sense connexió**: Abans d'enviar un datagrama, no es comprova si el dispositiu de destinació està disponible o no. Simplement s'envia el datagrama i es confia que arribarà a la seva destinació.
 
@@ -89,9 +89,9 @@ A la capa d'accés a la xarxa, els dispositius s'identifiquen mitjançant l'adre
 
 A la capa d'Internet, cal comunicar xarxes diferents i per tant, l'adreça MAC no és viable, perquè hauríem de tenir localitzades totes les adreces connectades al món, per aquest motiu, necessitem un format d'adreça que permeti agrupar jeràrquicament els dispositius per xarxes, de forma similar a com es fa amb els números de telèfon, aquestes són les **adreces IP**.
 
->💡 Us heu plantejat mai format té un número de telèfon fixe? Per exemple, pensem un telèfon de Mataró, 34937556159. Aquest número, es pot descomposar en els 2 primers dígits (34) que identifiquen el país, el 93 correspon a la província, els 75 correspon a la zona o central telefònica, en aquest cas correspon a una de Mataró, sent la resta de dígits els que identifiquen la línia de l'abonat.
+>💡 Us heu plantejat mai quin format té un número de telèfon fix? Per exemple, pensem un telèfon de Mataró, 34937556159. Aquest número, es pot descomposar en els 2 primers dígits (34) que identifiquen el país, el 93 correspon a la província, els 75 correspon a la zona o central telefònica, en aquest cas correspon a una de Mataró, sent la resta de dígits els que identifiquen la línia de l'abonat.
 
-D'adreces IP actualment n'hi ha dues versions, que corresponen a les dues versions operatives del protocol IP, la versió 4 (IPv4) corresponen a la primer versió funcional d'ARPANET i la versió 6 (IPv6), que va néixer per solucionar el problema d'esgotament d'adreces IP de la versió 4.
+D'adreces IP actualment n'hi ha dues versions, que corresponen a les dues versions operatives del protocol IP, la versió 4 (IPv4) corresponent a la primera versió funcional d'ARPANET i la versió 6 (IPv6), que va néixer per solucionar el problema d'esgotament d'adreces IP de la versió 4.
 
 ### Adreçament IPv4
 
@@ -109,4 +109,4 @@ Quines classes hi havia?
 - Classe B: adreces IP amb el primer octet entre 128 i 191, amb una màscara de xarxa de 255.255.0.0.
 - Classe C: adreces IP amb el primer octet entre 192 i 223, amb una màscara de xarxa de 255.255.255.0.
 - Classe D: adreces IP amb el primer octet entre 224 i 239, utilitzades per a transmissió multidestinatària.
-- Classe E: adreces IP amb el primer octet entre 240 i 255, utilitzades per a propòsits experimental.
+- Classe E: adreces IP amb el primer octet entre 240 i 255, utilitzades per a propòsits experimentals.
