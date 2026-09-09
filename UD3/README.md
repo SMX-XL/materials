@@ -8,9 +8,9 @@ Quan parlem de transmissió en el món de les xarxes locals, un punt important �
 
 Tenint en compte la direcció de la transmissió, podem distingir tres tipus de transmissió:
 
--**Símplex**: les dades viatgen en un sol sentit. És a dir, hi ha un únic emissor. Exemple: la TV.
--**Half dúplex**: la informació viatja en els dos sentits, però de manera alternativa. Exemple: els walkie.
--**Full dúplex**: les dades s’envien en els dos sentits i de forma simultània. Exemple: telèfon.
+- **Símplex**: les dades viatgen en un sol sentit. És a dir, hi ha un únic emissor. Exemple: la TV.
+- **Half dúplex**: la informació viatja en els dos sentits, però de manera alternativa. Exemple: els walkie.
+- **Full dúplex**: les dades s’envien en els dos sentits i de forma simultània. Exemple: telèfon.
 
 Un altre aspecte a tenir en compte és com es mesura la velocitat de transmissió de dades. Aquesta velocitat es mesura indicant el cabal de **bits per segon (bps)**. Per aquesta unitat, s'utilitzen els prefixos del Sistema Internacional, com ara Kbps (kilobits per segon), Mbps (megabits per segon) o Gbps (gigabits per segon), que corresponen a potències de 10 (10^3, 10^6 i 10^9, respectivament). Per exemple, una connexió a Internet de 100 Mbps significa que es poden transmetre fins a 100 milions de bits per segon.
 
