@@ -73,14 +73,13 @@ Les característiques principals de la transmissió de dades en aquesta capa só
 
 - **Sense estat**: No es manté cap informació sobre l'estat de la connexió entre els dispositius. Cada datagrama és independent dels altres i, per tant, el seu enviament es tracta de forma individual.
 
->![NOTE]
->Les comunicacions clàssiques com el telèfon, el teletip, etc. funcionen calculen la ruta a l'inici de la transmissió i mantenint-la per tot els "paquets" a enviar. És un sistema ràpid i eficient, però que té un problema, si les condicions canvien (el camí es talla), es perd la transmissió. El protocol IP es va crear sense estat perquè un dels criteris de disseny d'ARPANET era que fos una xarxa capaç de mantenir les comunicacions encara que es produissin fallades en alguns dels seus nodes.
+> 💡Les comunicacions clàssiques com el telèfon, el teletip, etc. funcionen calculen la ruta a l'inici de la transmissió i mantenint-la per tot els "paquets" a enviar. És un sistema ràpid i eficient, però que té un problema, si les condicions canvien (el camí es talla), es perd la transmissió. El protocol IP es va crear sense estat perquè un dels criteris de disseny d'ARPANET era que fos una xarxa capaç de mantenir les comunicacions encara que es produissin fallades en alguns dels seus nodes.
 
 Ara veurem alguns dels aspectes més importants d'aquesta capa com:
 
 - Adreçament IP.
-- Classless Inter-Domain Routing (CIDR). Màscares de subxarxa.
 - Adreces reservades.
+- Classless Inter-Domain Routing (CIDR). Màscares de subxarxa.
 - ARP (Address Resolution Protocol).
 - IP Routing.
 - Adreces públiques i privades. NAT (Network Address Translation).
@@ -123,6 +122,28 @@ A més, es van definir dues classes més, que no s'usen com a xarxes normals:
 - **Classe D**: adreces IP amb el primer byte entre 224 i 239, utilitzades per a comunicacions **multicast**. Per exemple, els ordinadors Windows a més de tenir una adreça IP individual, usen una adreça IP de multicast compartida entre tots els ordinadors de la xarxa, per a enviar missatges missatges a tots simultàniament.S'usen adreces sense agrupar-se en forma de xarxes.
 - **Classe E**: adreces IP amb el primer byte entre 240 i 255. Aquestes adreces es van reservar per a ús experimental i per tant, no estan destinades a Internet públic.
 
+Com s'ha dit abans, les adreces IP estan pensades per agrupar jeràrquicament els equips en xarxes, per tant, l'adreça indica a quina xarxa pertany l'equip i quin equip en concret és.
+
+### Adreces reservades
+
+No totes les adreces IP són vàlides per a ser assignades a equips, hi ha un conjunt d'adreces reservades per a usos especials, com ara:
+
+- `0.0.0.0`: s'utilitza per indicar que l'equip no té adreça IP assignada.
+
+- `127.x.x.x`: adreces de bucle invertit (loopback), s'utilitzen per a que un equip pugui comunicar-se amb si mateix. L'adreça més coneguda és `127.0.0.1`, però realment totes les adreces que comencen per 127 estan reservades per a aquest ús. Això és útil per la comunicació entre processos dins d'un mateix equip, ja que permet que un programa pugui enviar missatges a un altre programa que s'estigui executant en el mateix equip.
+
+- `255.255.255.255`: adreça de difusió (broadcast), s'utilitza per enviar missatges a tots els equips de la xarxa local on està connectat l'equip que envia el missatge.
+
+- Qualsevol adreça corresponent a una xarxa i que tingui tots els bits de host a 0, no es pot usar per identificar un equip, ja que identifica la xarxa.
+
+- Qualsevol adreça corresponent a una xarxa i que tingui tots els bits de host a 1, no es pot usar per identificar un equip, ja que identifica la difusió (broadcast) a tots els equips d'aquella xarxa.
+
+Per tant, a qualsevol xarxa, la primera adreça i la darrera no es poden assignar a cap equip. Per aquest motiu a una xarxa de classe C, que té un byte per identificar els hosts, només es poden assignar 254 adreces a equips, ja que la primera i l'última adreça no es poden utilitzar.
+
+En general, el nombre d'equips disponibles en una xarxa es calcula amb la fórmula:
+
+$$\text{Nombre d'equips} = 2^n - 2,  \text{ on } n \text{ és el nombre de bits destinats als hosts}$$
+
 ### Classless Inter-Domain Routing (CIDR)
 
 Durant anys, les xarxes que s'usaven havien de ser d'una de les tres classes indicades A, B o C. Això feia que moltes adreces IP es desaprofitessin, ja que si una xarxa necessitava 300 equips, no podia utilitzar una xarxa de classe C (només permet 254 equips), i havia d'utilitzar una xarxa de classe B (que permet 65.534 equips), desaprofitant moltes adreces.
@@ -147,5 +168,8 @@ Xarxa:     10101100.00000000.00000010.00000000
 
 Per tant, l’adreça de xarxa és `172.0.2.0`.
 
+Com serveix per separar la part de xarxa de la part d’host, els bits amb valor 1 **sempre estan a l'esquerra** i els bits amb valor 0 **sempre a la dreta**.
+
 I com queden les classes? Realment, ja no existeixen, però per costum solen seguir utilitzant-se els termes classe A, B i C per referir-se a xarxes amb màscares de subxarxa de 8, 16 i 24 bits respectivament i que sovint els equips suggereixen com a **màscara per defecte** quan es configura una adreça IP. Per això, quan en un ordinador configureu la IP, us proposarà una màscara de subxarxa segons la classe de l'adreça IP que heu introduït, però la podreu modificar per adaptar-la a la configuració real.
 
+Per tant, actualment una adreça IP **sempre** s'ha d'acompanyar d'una màscara de subxarxa, que pot ser qualsevol valor entre 0 i 32 bits, aquesta màscara es pot indicar en forma de 4 bytes o de forma compacta, indicant quants bits corresponen a la xarxa, que són els bits que tenen valor 1 a la màscara. Per exemple, una màscara de subxarxa de 24 bits es pot indicar com a `255.255.255.0` o bé com a `/24`.
