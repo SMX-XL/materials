@@ -44,9 +44,11 @@ Aquesta adreça té 48 bits:
 - 24 primers identifiquen fabricant
 - 24 següents identifiquen l’equip
 
-Es representa en format hexadecimal: 00:30:1b:b7:cd:b6
+Es representa en format hexadecimal: `00:30:1b:b7:cd:b6`
 
 És una adreça **única** que es registra al hardware de l’adaptador. Un equip té una adreça MAC per cada adaptador de xarxa que tingui.
+
+[Mac Address Lookup](https://macaddresslookup.io/es)
 
 #### Control del mitjà
 
