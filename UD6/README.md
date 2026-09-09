@@ -156,7 +156,7 @@ Per exemple, l'adreça IP 192.168.1.3/24 representa una adreça IP amb una màsc
 
 Exemple ús de màscara de subxarxa:
 
-Un equip té l’adreça 172.0.2.224 i màscara 255.255.255.0
+Un equip té l’adreça `172.0.2.224` i màscara `255.255.255.0`.
 
 Per obtenir l’adreça de xarxa, fem una operació AND (i lògica) entre l’adreça IP i la màscara de subxarxa, això a nivell binari es fa multiplicant bit a bit, de manera que si el bit de la màscara és 1, es manté el bit de l’adreça IP, i si és 0, el bit resultant serà 0.
 
