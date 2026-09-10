@@ -18,7 +18,7 @@ Les característiques principals de la transmissió de dades en aquesta capa só
 
 - **Sense estat**: No es manté cap informació sobre l'estat de la connexió entre els dispositius. Cada datagrama és independent dels altres i, per tant, el seu enviament es tracta de forma individual.
 
-> 💡Les comunicacions clàssiques com el telèfon, el teletip, etc. funcionen calculen la ruta a l'inici de la transmissió i mantenint-la per tot els "paquets" a enviar. És un sistema ràpid i eficient, però que té un problema, si les condicions canvien (el camí es talla), es perd la transmissió. El protocol IP es va crear sense estat perquè un dels criteris de disseny d'ARPANET era que fos una xarxa capaç de mantenir les comunicacions encara que es produissin fallades en alguns dels seus nodes.
+> 💡Les comunicacions clàssiques com el telèfon, el teletip, etc. funcionen calculant la ruta a l'inici de la transmissió i mantenint-la per tots els "paquets" a enviar. És un sistema ràpid i eficient, però té un problema: si les condicions canvien (el camí es talla), es perd la transmissió. El protocol IP es va crear sense estat perquè un dels criteris de disseny d'ARPANET era que fos una xarxa capaç de mantenir les comunicacions encara que es produïssin fallades en alguns dels seus nodes.
 
 Ara veurem alguns dels aspectes més importants d'aquesta capa com:
 
