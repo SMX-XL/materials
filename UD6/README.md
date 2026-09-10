@@ -82,7 +82,7 @@ A la combinació d’adreça IP i port se l’anomena **socket**. Per exemple, s
 
 ### TCP vs UDP
 
-1.**Protocol TCP**
+1. **Protocol TCP**
 
 TCP és un protocol orientat a connexió, que garanteix que els paquets de dades arribin a destí i en l’ordre correcte.
 
