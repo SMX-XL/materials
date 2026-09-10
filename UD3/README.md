@@ -190,6 +190,11 @@ Són els dispositius que s'encarreguen de gestionar el trànsit de dades a la xa
 
 > Router. Atribució: [tp-link](https://www.tp-link.com)
 
+- **Access point**: és el dispositiu que permet connectar els equips sense fils (WiFi) a la xarxa local. L'access point s'encarrega de transmetre i rebre les dades entre els dispositius sense fils i el switch o router de la xarxa local.
+
+![Access point](./media/access-point.png)
+> Access point. Atribució: [tp-link](https://www.tp-link.com/es/home-networking/access-point/tl-wa3001/)
+
 ### Elements estructurals
 
 Us imagineu una xarxa local sense cap organització? Els cables estirats per terra, els dispositius apilats sense ordre i sense protecció, etc. Seria un caos i seria molt difícil de mantenir i solucionar problemes.
