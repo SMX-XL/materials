@@ -145,9 +145,9 @@ Vegem un exemple senzill, on es comença amb una petició HTTP (GET /index.html)
 Al destí, cada capa treu la seva capçalera i passa el contingut a la capa superior:
 
 ```data
-Bits → Capa 1: reconstruye la trama
-     → Capa 2: quita Ethernet, comprueba FCS → queda el PAQUETE IP
-     → Capa 3: quita IP, comprueba checksum   → queda el SEGMENTO TCP
-     → Capa 4: quita TCP, ordena los segmentos → quedan los DATOS
+Bits → Capa 1: reconstrueix la trama
+     → Capa 2: treu Ethernet, comprova l'FCS → queda el PAQUET IP
+     → Capa 3: treu IP, comprova el checksum → queda el SEGMENT TCP
+     → Capa 4: treu TCP, ordena els segments → queden les DADES
      → Capa 7: el navegador interpreta el GET
 ```
