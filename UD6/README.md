@@ -129,7 +129,7 @@ Vegem un exemple senzill, on es comença amb una petició HTTP (GET /index.html)
      ↓
 [TCP | Dades]                   ← Capa 4 (afegeix ports, seq, ack) → SEGMENT
      ↓
-[IP | TCP | Dades]              ← Capa 3 (afa    IPs origen/destí) → PAQUET
+[IP | TCP | Dades]              ← Capa 3 (afegeix IPs origen/destí) → PAQUET
      ↓
 [Ethernet | IP | TCP | Dades | FCS]  ← Capa 2 (afegeix MACs + CRC) → TRAMA
      ↓
