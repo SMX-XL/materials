@@ -13,10 +13,14 @@ En aquest repositori es troben els materials teòrics (apunts) corresponents als
 - [UD3: Elements d’una xarxa local](./UD3/README.md)
 - [UD4: Seguretat i protecció mediambiental](./UD4/README.md)
 - [UD5: Instal·lació física de la xarxa: cablatge estructurat](./UD5/README.md)
+- [UD6: Pila de protocols TCP/IP](./UD6/README.md)
+- [UD7: Capa Internet: Adreces IP i protocols d'encaminament](./UD7/README.md)
 
 ## Llicència
 
 Aquest repositori està subjecte a la llicència [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
 
 Això significa que pots:
 
