@@ -53,9 +53,34 @@ Els protocols que s’utilitzen en aquesta capa són TCP (Transmission Control P
 
 La informació de capçalera que s'afegeix en aquesta capa és el **port**.
 
-**Els ports** són números que identifiquen els serveis que s’executen en un dispositiu. Per exemple, el port 80 és el port que s’utilitza per al servei web HTTP, mentre que el port 443 és el port que s’utilitza per al servei web HTTPS.
+### Els ports de la capa de transport
 
-### Protocols TCP i UDP
+Són números que identifiquen els serveis que s’executen en un dispositiu. Per exemple, el port 80 és el port que s’utilitza per al servei web HTTP, mentre que el port 443 és el port que s’utilitza per al servei web HTTPS.
+
+Per entendre fàcilment la utilitat dels ports, pensem en un repartidor que ha de portar un paquet a una persona que hi viu en un edifici d'apartaments. En primer lloc necessita saber el carrer i el número de l'edifici. Però un cop, hi arriba, necessita saber el número d'apartament per poder lliurar el paquet a la persona correcta. Doncs bé, l'adreça IP és com el carrer i el número de l'edifici (xarxa i hosts), mentre que el port (identificador de l'aplicació o procés) és com el número d'apartament.
+
+Aquest número identificatiu té 16 bits, per tant, el rang de ports és de 0 a 65535. Els ports es classifiquen en tres categories:
+
+- **Ports coneguts (Well-known ports)**: del 0 al 1023. Són utilitzats per serveis estandarditzats (els protocols fonamentals de xarxes i Internet), com ara el port 80 per al servei web HTTP o el port 443 per al servei web HTTPS. Estan normalitzats per l’IANA (Internet Assigned Numbers Authority) i no s'haurien d'utilitzar per a serveis que no estiguin registrats, perquè poden entrar en conflicte amb serveis coneguts.
+
+- **Ports registrats (Registered ports)**: del 1024 al 49151. Són els ports que utilitzen aplicacions i que sol·liciten a la IANA que els registri per evitar conflictes amb altres aplicacions. Per exemple, el port 3306 és el port que utilitza MySQL.
+
+- **Ports dinàmics o privats (Dynamic or Private ports)**: del 49152 al 65535. Són ports no registrats i que poden ser utilitzats per qualsevol aplicació. També sol ser el marge de ports que usen els clients per establir connexions amb els servidors, ja que el client no necessita un port fix per comunicar-se amb el servidor, se'n diu port efímer i té l'avantatge que un mateix client pot establir diverses connexions amb un mateix servidor, ja que cada connexió utilitza un port diferent.
+
+Per tant, una comunicació de xarxa entre dos dispositius es pot identificar amb la següent informació:
+
+- Adreça IP del dispositiu origen
+- Port del dispositiu origen
+- Adreça IP del dispositiu destí
+- Port del dispositiu destí
+
+A la combinació d’adreça IP i port se l’anomena **socket**. Per exemple, si un client amb adreça IP 192.168.1.100 utilitza el port 54321 per enviar dades a un servidor amb adreça IP 10.0.0.1 i port 8080, la comunicació es pot identificar amb el socket:
+
+```text
+192.168.1.100:54321 -> 10.0.0.1:8080
+```
+
+### TCP vs UDP
 
 1.**Protocol TCP**
 
