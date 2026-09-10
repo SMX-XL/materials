@@ -1,18 +1,18 @@
 # UD7. Capa Internet: Adreces IP i protocols d'encaminament
 
-Com s'ha dit abans, la funció d'aquesta capa és la de transmetre paquets de dades entre dispositius que poden estar en xarxes diferents, aquesta capa és gestionada bàsicament per tres protocols:
+A la unitat anterior, ja es va indicar que la funció d'aquesta capa és la de transmetre paquets de dades entre dispositius que poden estar en xarxes diferents, aquesta capa és gestionada bàsicament per tres protocols:
 
 - Protocol IP (Internet Protocol) que és el protocol principal d’aquesta capa, s’encarrega de l’adreçament i encaminament dels paquets de dades.
 
-- Protocol ICMP (Internet Control Message Protocol) que s’encarrega de la gestió d’errors i control de la xarxa.
+- Protocol ICMP (Internet Control Message Protocol) que s’encarrega de la gestió d’errors i control de la xarxa. El famós programa ping utilitza aquest protocol per comprovar la connectivitat entre dos dispositius.
 
 - Protocol ARP (Address Resolution Protocol) que s’encarrega de traduir les adreces IP en adreces MAC, actuant com a interfície amb la capa d'accés a la xarxa.
 
 La unitat d'informació d'aquesta capa (PDU) és el **datagrama**, que és un paquet de dades que conté una capçalera amb informació de control i una càrrega útil amb les dades que es volen transmetre. La capçalera del datagrama IP conté informació com l'adreça IP d'origen i destinació, el tipus de protocol de la capa superior, la longitud del datagrama, etc.
 
-Les característiques principals de la transmissió de dades en aquesta capa són:
+Les característiques principals del protocol IP són:
 
-- **Sense connexió**: Abans d'enviar un datagrama, no es comprova si el dispositiu de destinació està disponible o no. Simplement s'envia el datagrama i es confia que arribarà a la seva destinació.
+- **Sense connexió**: Abans d'enviar un datagrama, no es comprova si el dispositiu de destinació està disponible o no. Simplement s'envia el datagrama i es confia que arribarà a la seva destinació i cas que sigui necessari, és la capa de transport qui s'encarrega de garantir la fiabilitat de la transmissió.
 
 - **No fiable**: No hi ha cap mecanisme de control d'errors ni de confirmació de recepció. Si un datagrama es perd o es corromp, qui ho envia no en té constància.
 
@@ -89,7 +89,7 @@ En general, el nombre d'equips disponibles en una xarxa es calcula amb la fórmu
 
 $$\text{Nombre d'equips} = 2^n - 2,  \text{ on } n \text{ és el nombre de bits destinats als hosts}$$
 
-## Classless Inter-Domain Routing (CIDR)
+## La màscara de subxarxa (Classless Inter-Domain Routing o CIDR)
 
 Durant anys, les xarxes que s'usaven havien de ser d'una de les tres classes indicades A, B o C. Això feia que moltes adreces IP es desaprofitessin, ja que si una xarxa necessitava 300 equips, no podia utilitzar una xarxa de classe C (només permet 254 equips), i havia d'utilitzar una xarxa de classe B (que permet 65.534 equips), desaprofitant moltes adreces.
 
@@ -118,3 +118,20 @@ Com serveix per separar la part de xarxa de la part d’host, els bits amb valor
 I com queden les classes? Realment, ja no existeixen, però per costum solen seguir utilitzant-se els termes classe A, B i C per referir-se a xarxes amb màscares de subxarxa de 8, 16 i 24 bits respectivament i que sovint els equips suggereixen com a **màscara per defecte** quan es configura una adreça IP. Per això, quan en un ordinador configureu la IP, us proposarà una màscara de subxarxa segons la classe de l'adreça IP que heu introduït, però la podreu modificar per adaptar-la a la configuració real.
 
 Per tant, actualment una adreça IP **sempre** s'ha d'acompanyar d'una màscara de subxarxa, que pot ser qualsevol valor entre 0 i 32 bits, aquesta màscara es pot indicar en forma de 4 bytes o de forma compacta, indicant quants bits corresponen a la xarxa, que són els bits que tenen valor 1 a la màscara. Per exemple, una màscara de subxarxa de 24 bits es pot indicar com a `255.255.255.0` o bé com a `/24`.
+
+Les màscares poden diferents valors en funció del nombre d'1s que tinguin (sempre a l'esquerra) i per tant, del nombre de bits destinats a la xarxa i als hosts. A continuació es mostren alguns exemples de màscares de subxarxa:
+
+```text
+
+- `0.0.0.0` o `/0`: tots els bits són 0, per tant, sempre donarà com a resultat 0 i s'usa per l'encaminament per defecte.
+
+- `255.0.0.0` o `/8`: 8 bits per a la xarxa, 24 per als hosts, corresponent a l'antiga classe A.
+
+- `255.255.0.0` o `/16`: 16 bits per a la xarxa, 16 per als hosts, corresponent a l'antiga classe B.
+
+- `255.255.255.0` o `/24`: 24 bits per a la xarxa, 8 per als hosts, corresponent a l'antiga classe C.
+
+- `255.255.255.128` o `/25`: 25 bits per a la xarxa, 7 per als hosts, indica una xarxa amb 128 adreces, de les quals 126 es poden assignar a equips.
+
+- `255.255.255.255` o `/32`: tots els bits són 1, per tant, indicaria que tots els bits corresponen a la xarxa i cap als hosts, s'usa en encaminaments a un equip únic. 
+```
