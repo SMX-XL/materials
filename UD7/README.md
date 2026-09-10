@@ -1,5 +1,9 @@
 # UD7. Capa Internet: Adreces IP i protocols d'encaminament
 
+RA4. Instal·la equips en xarxa, descrivint-ne les prestacions i aplicant tècniques de muntatge.
+
+## Introducció
+
 A la unitat anterior, ja es va indicar que la funció d'aquesta capa és la de transmetre paquets de dades entre dispositius que poden estar en xarxes diferents, aquesta capa és gestionada bàsicament per tres protocols:
 
 - Protocol IP (Internet Protocol) que és el protocol principal d’aquesta capa, s’encarrega de l’adreçament i encaminament dels paquets de dades.
