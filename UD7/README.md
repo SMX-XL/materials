@@ -24,11 +24,12 @@ Ara veurem alguns dels aspectes més importants d'aquesta capa com:
 
 - Adreçament IP.
 - Adreces reservades.
-- Classless Inter-Domain Routing (CIDR). Màscares de subxarxa.
-- ARP (Address Resolution Protocol).
-- IP Routing.
+- Màscares de subxarxa.
+- Subxarxes.
+- Encaminament IP.
 - Adreces públiques i privades. NAT (Network Address Translation).
 - Adreces IPv6
+- ARP (Address Resolution Protocol).
 
 ## Adreçament IP
 
@@ -134,4 +135,160 @@ Les màscares poden diferents valors en funció del nombre d'1s que tinguin (sem
 - `255.255.255.128` o `/25`: 25 bits per a la xarxa, 7 per als hosts, indica una xarxa amb 128 adreces, de les quals 126 es poden assignar a equips.
 
 - `255.255.255.255` o `/32`: tots els bits són 1, per tant, indicaria que tots els bits corresponen a la xarxa i cap als hosts, s'usa en encaminaments a un equip únic. 
+```
+
+I què permet l'ús de les màscares de subxarxa? Doncs permet fer agrupacions flexibles, per exemple dividir una xarxa en subxarxes més petites o agrupar xarxes amb un prefix comú, acció típica a l'hora de enviar paquets a través d'Internet.
+
+## Subxarxes
+
+Aquesta tècnica consisteix a dividir una xarxa en subxarxes més petites, per exemple, si tenim una xarxa amb màscara de subxarxa `/24`, que permet 254 equips, però una xarxa més petita, de 50 equips, podem dividir aquesta xarxa en 5 subxarxes amb màscara `/26`, que permeten 62 equips cadascuna.
+
+Existeixen dues tècniques diferents de fer la divisió de subxarxes, en aquest curs usarem la més senzilla, que consisteix a dividir la xarxa en subxarxes de la mateixa mida, per exemple, si tenim una xarxa amb màscara `/24`, podem dividir-la en 2 subxarxes amb màscara `/25`, que permeten 126 equips cadascuna, o bé en 4 subxarxes amb màscara `/26`, que permeten 62 equips cadascuna.
+
+### Procediment per calcular subxarxes
+
+Partim de la xarxa original (adreça IP i màscara de subxarxa) i de la necessitat que es plantegi, que pot ser el nombre de subxarxes que es volen crear o el nombre d'equips que es volen connectar a cada subxarxa. Anem a veure un exemple de cada cas.
+
+1. **Dividir en un nombre determinat de subxarxes**
+
+    Si es demana dividir en `N` subxarxes, cal calcular quants bits cal "agafar" de la part d'host per a crear les subxarxes. Per això, cal buscar el nombre més petit `n` tal que `2^n >= N`. A continuació, es sumen aquests `n` bits a la màscara de subxarxa original per obtenir la nova màscara de subxarxa.
+
+    Per exemple, si es demanen 4 subxarxes, necessitem 2 bits, ja que `2^2 = 4`, si es demana dividir en 6 subxarxes, necessitem 3 bits, ja que `2^3 = 8`, que és el nombre més petit de subxarxes que podem crear amb 3 bits.
+
+    > 💡 Com segur que heu notat, sempre dividirem amb una nombre potència de 2 (4,8, 16 ...) subxarxes. És la limitació del mètode de divisió amb màscara única.
+
+    Exemple: Tenim una xarxa amb adreça `192.168.1.0` i màscara `/24`. Volem dividir-la en 3 subxarxes.
+
+    Solució:
+
+    Haurem de dividir en **4** subxarxes perquè és la potència de 2 més propera a 3 per excès, per tant, necessitem 2 bits per a les subxarxes.
+
+    - Nova màscara de subxarxa: `/24 + 2 = /26`
+    - Nombre d'equips per subxarxa: `2^(32-26) - 2 = 62 equips`
+
+    - 1a subxarxa: `192.168.1.0/26` , equips de `192.168.1.1` a `192.168.1.62` i broadcast `192.168.1.63`.
+
+    - 2a subxarxa: `192.168.1.64/26` , equips de `192.168.1.65` a `192.168.1.126` i broadcast `192.168.1.127`.
+
+    - 3a subxarxa: `192.168.1.128/26` , equips de `192.168.1.129` a `192.168.1.190` i broadcast `192.168.1.191`.
+
+    Quedant la 4a subxarxa sense utilitzar.
+
+2. **Dividir en subxarxes amb un nombre determinat d'equips**
+
+    En aquest cas, cal calcular quants bits cal "agafar" de la part d'host per a crear les subxarxes. Per això, cal buscar el nombre més petit `n` tal que `2^n - 2 >= M`, on `M` és el nombre d'equips que es volen connectar a cada subxarxa. A continuació, es sumen aquests `n` bits a la màscara de subxarxa original per obtenir la nova màscara de subxarxa.
+
+    Per exemple, si ens deman connectar 50 equips a cada subxarxa, necessitem 6 bits, ja que `2^6 - 2 = 62`, ja que és la xarxa més petita que es pot crear i on càpiguen 50 equips.
+
+    Exemple: Tenim una xarxa amb adreça `172.16.0.0` i màscara `/16`. Volem dividir-la en subxarxes el més petites possibles amb 80 equips cadascuna.
+
+    Solució:
+
+    Per tenir 80 equips, necessitem 7 bits, ja que `2^7 - 2 = 126`, que és el nombre més petit de bits que ens permet tenir almenys 80 equips.
+
+    Per tant, les noves subxarxes tenen prou amb un màscara de `32-7 = /25`, com originalment teníem un màscara de `/16`, vol dir que dividirem la xarxa original en `2^25 = 128` subxarxes.
+
+    A continuació, es mostren les primeres subxarxes:
+
+    - 1a subxarxa: `172.16.0.0/25` , equips de `172.16.0.1` a `172.16.0.126` i broadcast `172.16.0.127`.
+    - 2a subxarxa: `172.16.0.128/25` , equips de `172.16.0.129` a `172.16.0.254` i broadcast `172.16.0.255`.
+    - 3a subxarxa: `172.16.1.0/25` , equips de `172.16.1.1` a `172.16.1.126` i broadcast `172.16.1.127`.
+
+## Encaminament IP
+
+Recordem que la funció de la capa Internet és transmetre paquets de dades entre dispositius que poden estar en xarxes diferents, per això, cal que els dispositius coneguin quina és la millor ruta per enviar els paquets a la seva destinació, aquest procediment s'anomena **encaminament IP** i es realitza mitjançant taules d'encaminament que contenen informació sobre les xarxes conegudes i la millor ruta per arribar-hi.
+
+## Adreces públiques i privades. NAT (Network Address Translation)
+
+A la xarxa telefònica, no podem tenir dos mòbils amb el mateix número, ja que no es podrien diferenciar, per això, cada mòbil té un número únic. A Internet passa el mateix, no es poden tenir dos equips amb la mateixa adreça IP pública a Internet, ja que no es podrien diferenciar. Per això, les adreces IP públiques són úniques a Internet i són assignades per l'ICANN (Internet Corporation for Assigned Names and Numbers).
+
+Aconseguir una adreça IP a Internet està regulat, no podem triar la que nosaltres vulguem. L'ICANN és l'organització que s'encarrega de gestionar les adreces IP a nivell mundial, i per això, ha creat 5 organitzacions regionals (RIR) que s'encarreguen de gestionar les adreces IP a nivell regional i que es van repartir les adreces IP.
+
+![Mapa organitzacions regionals](https://aso.icann.org/wp-content/uploads/2019/12/RIR-Map-Website.jpg)
+
+> ❗ El repartiment no va ser equitatiu, ja que originalment, Internet es va crear als Estats Units i per això, es va quedar un bona part de les adreces. El creixement de Internet a la resta del món ha fet que actualment hi hagi problemes d'esgotament d'adreces IP públiques, especialment a Àfrica i Àsia on la població connectada a Internet ha crescut molt a les darreres dècades.
+
+Un proveïdor d'Internet, aconsegueix un bloc d'adreces IP a canvi d'un quota anual i són aquestes adreces les que assigna al seus clients, repecurtint el cost dins la tarifa d'accés a Internet. Les adreces IP que s'usen a Internet, s'anomenen **adreces IP públiques** i recordem, són úniques a Internet, per tant, no es poden repetir.
+
+Però penseu ara a l'escola, us imagineu que cadascun dels ordinadors que hi ha a l'escola hagués de pagar per tenir una adreça IP? En primer lloc, el cost per la major part de les empreses i particulars (quants equips tenen connexió a Internet a casa vostra?).
+
+Per aquest motiu, es van crear les **adreces privades**, que són adreces que no són úniques a Internet i que poden ser utilitzades per qualsevol xarxa privada, com ara una escola, una empresa o una casa particular. Aquestes adreces IP privades no es poden utilitzar a Internet, ja que no són úniques i per tant, no hi poden accedir directament. El seu principal avantatge és que es poden reutilitzar en diferents xarxes privades, permetent així un estalvi d'adreces IP públiques.
+
+I quines xarxes IP són privades? Doncs hi ha tres blocs d'adreces IP que estan reservades per a ús privat:
+
+- `10.0.0.0/8`: és a dir, es va reservar tota una xarxa de classe A.
+- `172.0.16.0/12`: és a dir, es van reservar 16 xarxes de classe B.
+- `192.168.0.0/16`: per tant, l'equivalent a 256 xarxes de classe C.
+
+Per tant, a casa, a l'escola o a l'empresa, els nostres equips usaran una adreça IP privada, la podeu consultar mirant la configuració de xarxa del vostre ordinador.
+
+La pregunta ara és, i com podem accedir a Internet si tenim una adreça IP privada? Doncs per això es va crear el protocol NAT (Network Address Translation), que permet que els equips amb adreces IP privades puguin accedir a Internet utilitzant una adreça IP pública, que és la que s'utilitza per identificar la xarxa privada a Internet.
+
+El router d'accés a Internet, que és l'encarregat de connectar la xarxa privada amb Internet, fa la traducció d'adreces IP privades a adreces IP públiques i viceversa, de manera que els equips de la xarxa privada poden accedir a Internet sense problemes.
+
+Per això tots els equips d'una xarxa són visibles a Internet amb la mateixa adreça IP pública, que és la que té el router d'accés a Internet, ho podeu comprovar per exemple, accedint a la web [https://www.whatismyip.com/](https://www.whatismyip.com/) i comprovant que tota la classe obté el mateix resultat.
+
+## Adreces IPv6
+
+Amb el creixement d'Internet, el nombre d'adreces IP públiques disponibles s'ha anat esgotant, per això, es va veure la necessitat de crear un nou protocol IP que permetés un nombre molt més gran d'adreces IP públiques. Finalment, el protocol triat va ser l'IPv6, que tot i que es va definir a l'any 1998, no es va aprovar com estàndard definitiu fins a l'any 2017.
+
+Aquesta nova versió del protocol IP utilitza adreces de 128 bits, que permeten un nombre molt gran d'adreces IP públiques, concretament 2^128 adreces, que són 340.282.366.920.938.463.463.374.607.431.768.211.456 adreces, que és un nombre molt gran d'adreces IP.
+
+Perquè us feu una idea, suposant una població mundial de 8.000 milions d'habitants, amb IPv4, tocaríem a 0,5 adreces IP per persona. De fet serien menys, per causa de les adreces reservades, les privades i l'espai no usable (classes D i E). Amb IPv6, tocarien un nombre d'adreces per persona de l'ordre de milers de trillons.
+
+I com es representen les adreces IPv6? Doncs en format hexadecimal, amb 8 grups de 4 dígits hexadecimals separats per dos punts, per exemple:
+
+`2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+
+I la màscara de subxarxa es representa amb una barra i el nombre de bits que corresponen a la xarxa, per exemple:
+
+`2001:0db8:85a3:0000:0000:8a2e:0370:7334/64`
+
+Com podeu veure, les adreces IPv6 són molt més llargues que les adreces IPv4, per això, s'han definit unes regles per a simplificar la seva representació:
+
+- Els zeros a l'inici d'un grup de 4 dígits hexadecimals es poden eliminar, per exemple, el grup `0db8` es pot escriure com `db8`.
+- Els grups de zeros consecutius es poden substituir per `::`, però només es pot fer una vegada en tota l'adreça, per exemple, l'adreça `2001:0db8:0000:0000:0000:0000:0000:0001` es pot escriure com `2001:db8::1`. Òbviament, si hi ha més d'un grup de zeros consecutius, només es pot substituir un d'ells per `::`, per exemple, l'adreça `2001:0db8:0000:0100:0000:0000:0000:0001` es pot escriure com `2001:db8::1`, però no es pot escriure com `2001::100::1`, perquè no se sabria quins grups de zeros s'han substituït.
+
+Els valors de la màscara de subxarxa, a diferència de IPv4 són molt més limitats, `/64`és la màscara més utilitzada, ja que s'ha definit com la màscara per defecte estàndard per xarxes finals. Per les xarxes del operadors d'Internet, s'utilitzen màscares de `/48`, que permeten crear subxarxes amb màscara `/64`.
+
+I quins tipus d'adreces IPv6 hi ha? Doncs hi ha tres tipus d'adreces IPv6:
+
+- **Unicast**: adreces que identifiquen un únic dispositiu a la xarxa. Són les adreces més utilitzades i permeten enviar paquets de dades a un únic dispositiu.
+- **Multicast**: adreces que identifiquen un grup de dispositius a la xarxa. Permeten enviar paquets de dades a tots els dispositius del grup.
+- **Anycast**: adreces que identifiquen un grup de dispositius a la xarxa, però només un d'ells respon al paquet de dades enviat. Permeten enviar paquets de dades al dispositiu més proper del grup.
+
+Aquí no existeix l'equivalent a les adreces de difusió (broadcast) d'IPv4, ja que amb xarxes tan grans, suposaria un gran problema de congestió de la xarxa.
+
+I pel que respecta a adreces públiques i privades?
+
+Doncs, amb IPv6 es va definir un tipus d'adreces anomenades ULA (Unique Local Addresses),pensades per a utilitzar en xarxes locals, que equivalen a les adreces privades d'IPv4, s'usa el prefix `FD00::/8`.
+
+A part d'això, s'han definit un tipus d'adreces IPv6 anomenades d'enllaç local (link-local), que són adreces que només són vàlides dins d'una xarxa local i no poden ser utilitzades a Internet. Aquestes adreces tenen el prefix `FE80::/10` i s'utilitzen per a la comunicació entre dispositius dins d'una mateixa xarxa local. Tenen la característica que es generen automàticament a partir de l'adreça MAC del dispositiu, per tant, són úniques dins la xarxa local i no cal configurar-les manualment, per això, són molt populars en aplicacions que usen IPv6 a nivell local.
+
+I quina implantanció té IPv6 actualment?
+
+Doncs encara és limitada, segons les estadístiques de [Google](https://www.google.com/intl/en/ipv6/statistics.html), un 50% dels usuaris de Google usen IPv6. Però la implantació és lenta i desigual. El nucli d'Internet ja fa anys que funciona amb IPv6, de la mateixa manera que les grans companyies com Google, Facebook, Microsoft, etc. Però la resta d'Internet, especialment les xarxes dels proveïdors d'Internet, encara funcionen majoritàriament amb IPv4.
+
+Per països com Índia, França o Xina lideren amb implantacions que superen el 70%, Estats Units d'Amèrica té una quota d'implantació d'IPv6 superiors al 50%, mentre que països com Espanya, Itàlia o Alemanya tenen quotes inferiors al 20%, i en el cas d'Àfrica, els valors encara són més baixos, amb països com Nigèria o Sud-àfrica amb quotes inferiors al 10%.
+
+A les xarxes locals, malgrat la majoria d'equips ja són compatibles amb IPv6, la majoria dels routers d'accés a Internet encara no ho són, per tant, es continua utilitzant IPv4.
+
+## ARP (Address Resolution Protocol)
+
+Estem parlant molt d'adreces IP i de l'important que són, però si fem una mica de mempòria, a la capa d'accés a la xarxa, els dispositius s'identifiquen mitjançant l'adreça MAC, que recordem és única i depèn del fabricant de l'adaptador de xarxa. 
+
+Per tant, si un dispositiu vol enviar un paquet a través de la seva xarxa Ethernet o WiFi, ha de conèixer l'adreça MAC del dispositiu de destinació. Però com es fa això si només coneixem l'adreça IP del dispositiu de destinació? Doncs per això es va crear el protocol ARP (Address Resolution Protocol), que permet traduir una adreça IP en una adreça MAC.
+
+I com funciona ARP? Doncs quan un dispositiu vol enviar un paquet a un altre dispositiu de la mateixa xarxa, envia un missatge ARP a tota la xarxa preguntant "Qui té aquesta adreça IP? Respon amb la teva adreça MAC". El dispositiu que té aquesta adreça IP respon amb la seva adreça MAC, i així el dispositiu emissor pot enviar el paquet directament al dispositiu de destinació.
+
+Els equips per tant, tenen una taula ARP, que és una taula que conté les adreces IP i les adreces MAC corresponents dels dispositius de la xarxa. Aquesta taula es va omplint a mesura que els dispositius es comuniquen entre si, i permet enviar paquets directament als dispositius de destinació sense haver de preguntar cada vegada per la seva adreça MAC, la podeu consultar si obriu un terminal i escriviu la comanda `arp -a` a Windows o `arp -n` a Linux.
+
+Aquesta taula no és permanent, ja que les adreces MAC poden canviar si un dispositiu es connecta a una altra xarxa, per això, les entrades de la taula ARP tenen un temps de vida limitat i s'eliminen automàticament després d'un temps.
+
+```terminal
+# Exemple de taula ARP a Windows
+Interface 192.168.1.12
+  Internet Address      Physical Address      Type
+  192.168.1.1           00-1a-2b-3c-4d-5e     dynamic
+  192.168.1.2           00-1a-2b-3c-4d-5f     dynamic
 ```
