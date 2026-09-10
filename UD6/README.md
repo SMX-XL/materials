@@ -122,7 +122,7 @@ Alguns exemples de protocols d'aquesta capa són: HTTP (responsable dels serveis
 
 ## Encapsulament de dades
 
-Veint un exemple senzill, on es comença amb una petició HTTP (GET /index.html) i es va encapsulant a mesura que passa per les diferents capes de la pila TCP/IP.
+Vegem un exemple senzill, on es comença amb una petició HTTP (GET /index.html) i es va encapsulant a mesura que passa per les diferents capes de la pila TCP/IP.
 
 ```data
 [Dades d'aplicació]           ← Capa 7 (HTTP: "GET /index.html")
