@@ -275,7 +275,7 @@ A les xarxes locals, malgrat la majoria d'equips ja són compatibles amb IPv6, l
 
 ## ARP (Address Resolution Protocol)
 
-Estem parlant molt d'adreces IP i de l'important que són, però si fem una mica de mempòria, a la capa d'accés a la xarxa, els dispositius s'identifiquen mitjançant l'adreça MAC, que recordem és única i depèn del fabricant de l'adaptador de xarxa. 
+Estem parlant molt d'adreces IP i de l'important que són, però si fem una mica de mempòria, a la capa d'accés a la xarxa, els dispositius s'identifiquen mitjançant l'adreça MAC, que recordem és única i depèn del fabricant de l'adaptador de xarxa.
 
 Per tant, si un dispositiu vol enviar un paquet a través de la seva xarxa Ethernet o WiFi, ha de conèixer l'adreça MAC del dispositiu de destinació. Però com es fa això si només coneixem l'adreça IP del dispositiu de destinació? Doncs per això es va crear el protocol ARP (Address Resolution Protocol), que permet traduir una adreça IP en una adreça MAC.
 
