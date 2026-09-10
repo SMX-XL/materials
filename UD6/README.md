@@ -21,7 +21,7 @@ graph TD
     C --> D[Accés a la xarxa]
 ```
 
-Si recordeu, el model OSI de referència té 7 capes, mentre que la pila TCP/IP només en té 4. Això és degut a que algunes de les capes del model OSI s’han agrupat en una sola capa a la pila TCP/IP, bàsicament perquè s'agrupen pel component hardware o sotfware que les implementa.
+Si recordeu, el model OSI de referència té 7 capes, mentre que la pila TCP/IP només en té 4. Això és degut a que algunes de les capes del model OSI s’han agrupat en una sola capa a la pila TCP/IP, bàsicament perquè s'agrupen pel component hardware o software que les implementa.
 
 ![Comparació entre el model OSI i la pila TCP/IP](media/osivstcp.png)
 
