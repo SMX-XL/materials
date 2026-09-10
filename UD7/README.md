@@ -64,7 +64,7 @@ Classe C: 110xxxxx.Xarxa.Xarxa.Host
 
 A més, es van definir dues classes més, que no s'usen com a xarxes normals:
 
-- **Classe D**: adreces IP amb el primer byte entre 224 i 239, utilitzades per a comunicacions **multicast**. Per exemple, els ordinadors Windows a més de tenir una adreça IP individual, usen una adreça IP de multicast compartida entre tots els ordinadors de la xarxa, per a enviar missatges missatges a tots simultàniament.S'usen adreces sense agrupar-se en forma de xarxes.
+- **Classe D**: adreces IP amb el primer byte entre 224 i 239, utilitzades per a comunicacions **multicast**. Per exemple, els ordinadors Windows a més de tenir una adreça IP individual, usen una adreça IP de multicast compartida entre tots els ordinadors de la xarxa, per a enviar missatges a tots simultàniament. S'usen adreces sense agrupar-se en forma de xarxes.
 - **Classe E**: adreces IP amb el primer byte entre 240 i 255. Aquestes adreces es van reservar per a ús experimental i per tant, no estan destinades a Internet públic.
 
 Com s'ha dit abans, les adreces IP estan pensades per agrupar jeràrquicament els equips en xarxes, per tant, l'adreça indica a quina xarxa pertany l'equip i quin equip en concret és.
