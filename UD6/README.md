@@ -21,84 +21,133 @@ graph TD
     C --> D[Accés a la xarxa]
 ```
 
-Si recordeu, el model OSI de referència té 7 capes, mentre que la pila TCP/IP només en té 4. Això és degut a que algunes de les capes del model OSI s’han agrupat en una sola capa a la pila TCP/IP, bàsicament perquè s'agrupen pel component hardware o sofware que les implementa.
+Si recordeu, el model OSI de referència té 7 capes, mentre que la pila TCP/IP només en té 4. Això és degut a que algunes de les capes del model OSI s’han agrupat en una sola capa a la pila TCP/IP, bàsicament perquè s'agrupen pel component hardware o software que les implementa.
 
 ![Comparació entre el model OSI i la pila TCP/IP](media/osivstcp.png)
 
 Ara veurem breument les funcions de cada capa de la pila TCP/IP i quines capes del model OSI corresponen.
 
-- **Network Access Layer (Capa d’accés a la xarxa)**
+## Network Access Layer (Capa d’accés a la xarxa)
 
-    Aquesta capa agrupa les capes 1 i 2 del model OSI (Física i Enllaç de dades). La seva funció és la de transmetre paquets de dades a través d’una xarxa física. Aquesta capa depèn del tipus de xarxa que s’utilitzi, ja que cada tecnologia té el seu propi protocol per transmetre dades i bàsicament s'implementa en el hardware de l'adaptador de xarxa.
+ Aquesta capa agrupa les capes 1 i 2 del model OSI (Física i Enllaç de dades). La seva funció és la de transmetre paquets de dades a través d’una xarxa física. Aquesta capa depèn del tipus de xarxa que s’utilitzi, ja que cada tecnologia té el seu propi protocol per transmetre dades i bàsicament s'implementa en el hardware de l'adaptador de xarxa.
 
-    Algunes de les tecnologies més utilitzades són: Ethernet, WiFi, PPP, FDDI, Token Ring, etc. Cada tecnologia té el seu propi protocol per transmetre dades, però totes elles tenen en comú que utilitzen adreces MAC per identificar els dispositius de la xarxa.
-
-- **Internet Layer (Capa d’Internet)**
-
-    Aquesta capa és equivalent a la capa de Xarxa del model OSI. La seva funció és la de transmetre paquets de dades entre dispositius que poden estar en xarxes diferents.
-
-    Per tant, aquesta capa és la que permet el funcionament d’Internet, ja que permet que els paquets de dades arribin al dispositiu correcte independentment de la xarxa on estigui connectat. En aquesta capa s'usa l'adreça IP per identificar els dispositius de la xarxa.
-
-- **Transport Layer (Capa de Transport)**
-
-    Quan parlem amb una persona pel telèfon mòbil, la nostra comunicació és directa, com si els dos telèfons estiguessin connectats directament, tot i que realment, per sota, la comunicació passa per diverses etapes (centrals telefòniques, repetidors, etc.).
-
-    Doncs bé, la capa de transport s'encarrega de gestionar la comunicació directa entre els dos dispositius que volen comunicar-se, independentment de la xarxa que hi hagi entre ells.
-
-- **Application Layer (Capa d’Aplicació)**
-
-    Al final usem els ordinadors mitjançant aplicacions, com ara navegadors web, clients de correu electrònic, etc. La capa d’aplicació és la que ofereix els serveis necessaris per a que les aplicacions puguin comunicar-se entre elles.
-
-    Aquesta capa és equivalent a les capes 5, 6 i 7 del model OSI (Sessió, Presentació i Aplicació), perquè  les funcions d’aquestes capes s’implementen en el software de les aplicacions.
-
-    Alguns exemples de protocols d'aquesta capa són: HTTP (responsable dels serveis web), FTP (responsable de la transferència de fitxers), SMTP (responsable del correu electrònic), DNS (responsable de la resolució de noms de domini).
+ Algunes de les tecnologies més utilitzades són: Ethernet, WiFi, PPP, FDDI, Token Ring, etc. Cada tecnologia té el seu propi protocol per transmetre dades, però totes elles tenen en comú que utilitzen adreces MAC per identificar els dispositius de la xarxa.
 
 ## Internet Layer (Capa d’Internet)
 
-Com s'ha dit abans, la funció d'aquesta capa és la de transmetre paquets de dades entre dispositius que poden estar en xarxes diferents, aquesta capa és gestionada bàsicament per tres protocols:
+Aquesta capa és equivalent a la capa de Xarxa del model OSI. La seva funció és la de transmetre paquets de dades entre dispositius que poden estar en xarxes diferents.
 
-- Protocol IP (Internet Protocol) que és el protocol principal d’aquesta capa, s’encarrega de l’adreçament i encaminament dels paquets de dades.
+Per tant, aquesta capa és la que permet el funcionament d’Internet, ja que permet que els paquets de dades arribin al dispositiu correcte independentment de la xarxa on estigui connectat. En aquesta capa s'usa l'adreça IP per identificar els dispositius de la xarxa.
 
-- Protocol ICMP (Internet Control Message Protocol) que s’encarrega de la gestió d’errors i control de la xarxa.
+Aquí el protocol estrella és l’IP (Internet Protocol), que és el protocol que s’encarrega de transmetre els paquets de dades entre dispositius. També hi ha altres protocols com ICMP (Internet Control Message Protocol) i ARP (Address Resolution Protocol).
 
-- Protocol ARP (Address Resolution Protocol) que s’encarrega de resoldre les adreces IP en adreces MAC, actuan d'inferfície amb la capa d'accés a la xarxa.
+Aquesta capa incorpora l'adreça IP, que és l'adreça que permet identificar un dispositiu a Internet.
 
-La unitat d'informació d'aquesta capa (PDU) és el **datagrama**, que és un paquet de dades que conté una capçalera amb informació de control i una càrrega útil amb les dades que es volen transmetre. La capçalera del datagrama IP conté informació com l'adreça IP d'origen i destinació, el tipus de protocol de la capa superior, la longitud del datagrama, etc.
+## Transport Layer (Capa de Transport)
 
-Les característiques principals de la transmsissió de dades en aquesta capa són:
+Quan parlem amb una persona pel telèfon mòbil, la nostra comunicació és directa, com si els dos telèfons estiguessin connectats directament, tot i que realment, per sota, la comunicació passa per diverses etapes (centrals telefòniques, repetidors, etc.).
 
-- **Sense connexió**: Abans d'enviar un datagrama, no es comprova si el dispositiu de destinació està disponible o no. Simplement s'envia el datagrama i es confia que arribarà a la seva destinació.
+Doncs bé, la capa de transport s'encarrega de gestionar la comunicació directa entre els dos dispositius que volen comunicar-se, independentment de la xarxa que hi hagi entre ells.
 
-- **No fiable**: No hi ha cap mecanisme de control d'errors ni de confirmació de recepció. Si un datagrama es perd o es corromp, qui ho envia no en té constància.
+Els protocols que s’utilitzen en aquesta capa són TCP (Transmission Control Protocol) i UDP (User Datagram Protocol).
 
-- **Sense estat**: No es manté cap informació sobre l'estat de la connexió entre els dispositius. Cada datagrama és independent dels altres i, per tant, el seu enviament es tracta de forma individual.
+La informació de capçalera que s'afegeix en aquesta capa és el **port**.
 
->💡 Les comunicacions clàssiques com el telèfon, el teletip, etc. funcionen calculen la ruta a l'inici de la transmissió i mantenint-la per tot els "paquets" a enviar. És un sistema ràpid i eficient, però que té un problema, si les condicions canvien (el camí es talla), es perd la transmissió. El protocol IP es va crear sense estat perquè un dels criteris de disseny d'ARPANET era que fos una xarxa capaç de mantenir les comunicacions encara que es produissin fallades en alguns dels seus nodes.
+### Els ports de la capa de transport
 
-Ara veurem alguns dels aspectes més importants d'aquesta capa com:
+Són números que identifiquen els serveis que s’executen en un dispositiu. Per exemple, el port 80 és el port que s’utilitza per al servei web HTTP, mentre que el port 443 és el port que s’utilitza per al servei web HTTPS.
 
-- Adreçament IP.
-- Classless Inter-Domain Routing (CIDR).
-- ARP (Address Resolution Protocol).
-- IP Routing.
-- NAT (Network Address Translation).
+Per entendre fàcilment la utilitat dels ports, pensem en un repartidor que ha de portar un paquet a una persona que hi viu en un edifici d'apartaments. En primer lloc necessita saber el carrer i el número de l'edifici. Però un cop, hi arriba, necessita saber el número d'apartament per poder lliurar el paquet a la persona correcta. Doncs bé, l'adreça IP és com el carrer i el número de l'edifici (xarxa i hosts), mentre que el port (identificador de l'aplicació o procés) és com el número d'apartament.
 
-### Adreçament IP
+Aquest número identificatiu té 16 bits, per tant, el rang de ports és de 0 a 65535. Els ports es classifiquen en tres categories:
 
-A la capa d'accés a la xarxa, els dispositius s'identifiquen mitjançant l'adreça MAC, que és un identificador únic i que depèn del fabricant de l'adaptador de xarxa.
+- **Ports coneguts (Well-known ports)**: del 0 al 1023. Són utilitzats per serveis estandarditzats (els protocols fonamentals de xarxes i Internet), com ara el port 80 per al servei web HTTP o el port 443 per al servei web HTTPS. Estan normalitzats per l’IANA (Internet Assigned Numbers Authority) i no s'haurien d'utilitzar per a serveis que no estiguin registrats, perquè poden entrar en conflicte amb serveis coneguts.
 
-A la capa d'Internet, cal comunicar xarxes diferents i per tant, l'adreça MAC no és viable, perquè hauríem de tenir localitzades totes les adreces connectades al món, per aquest motiu, necessitem un format d'adreça que permeti agrupar jeràrquicament els dispositius per xarxes, de forma similar a com es fa amb els números de telèfon, aquestes són les **adreces IP**.
+- **Ports registrats (Registered ports)**: del 1024 al 49151. Són els ports que utilitzen aplicacions i que sol·liciten a la IANA que els registri per evitar conflictes amb altres aplicacions. Per exemple, el port 3306 és el port que utilitza MySQL.
 
->💡 Us heu plantejat mai format té un número de telèfon fixe? Per exemple, pensem un telèfon de Mataró, 34937556159. Aquest número, es pot descomposar en els 2 primers dígits (34) que identifiquen el país, el 93 correspon a la província, els 75 correspon a la zona o central telefònica, en aquest cas correspon a una de Mataró, sent la resta de dígits els que identifiquen la línia de l'abonat.
+- **Ports dinàmics o privats (Dynamic or Private ports)**: del 49152 al 65535. Són ports no registrats i que poden ser utilitzats per qualsevol aplicació. També sol ser el marge de ports que usen els clients per establir connexions amb els servidors, ja que el client no necessita un port fix per comunicar-se amb el servidor, se'n diu port efímer i té l'avantatge que un mateix client pot establir diverses connexions amb un mateix servidor, ja que cada connexió utilitza un port diferent.
 
-D'adreces IP actualment n'hi ha dues versions, que corresponen a les dues versions operatives del protocol IP, la versió 4 (IPv4) corresponen a la primer versió funcional d'ARPANET i la versió 6 (IPv6), que va néixer per solucionar el problema d'esgotament d'adreces IP de la versió 4.
+Per tant, una comunicació de xarxa entre dos dispositius es pot identificar amb la següent informació:
 
-### Adreçament IPv4
+- Adreça IP del dispositiu origen
+- Port del dispositiu origen
+- Adreça IP del dispositiu destí
+- Port del dispositiu destí
 
-La versió 4 del protocol IP utilitza adreces de 32 bits (en aquell moment era el límit de representació de dades que es podia utilitzar), d'aquesta manera es poden representar 2^32 adreces diferents, que són 4.294.967.296 adreces, que tot i que semblen moltes, ja fa anys que n'hi ha problemes d'esgotament.
+A la combinació d’adreça IP i port se l’anomena **socket**. Per exemple, si un client amb adreça IP 192.168.1.100 utilitza el port 54321 per enviar dades a un servidor amb adreça IP 10.0.0.1 i port 8080, la comunicació es pot identificar amb el socket:
 
-Es representen en format decimal amb 4 octets separats per punts, per exemple:
+```text
+192.168.1.100:54321 -> 10.0.0.1:8080
+```
 
-192.168.1.3
+### TCP vs UDP
 
-Al principi, les adreces IP es van classificar en classes, que era un forma senzilla de determinar la mida de la xarxa.
+1. **Protocol TCP**
+
+TCP és un protocol orientat a connexió, que garanteix que els paquets de dades arribin a destí i en l’ordre correcte.
+
+- Orientat a connexió: abans de començar a enviar dades, s’estableix una connexió entre els dos dispositius que volen comunicar-se. Aquesta connexió es manté durant tota la comunicació i es tanca quan s’acaba. S'utilitza un procés anomenat "three-way handshake" per establir la connexió.
+
+- Fiabilitat: TCP garanteix que els paquets de dades arribin a destí. Si algun paquet es perd, TCP s’encarrega de tornar-lo a enviar.
+
+- Control de flux: TCP s'encarrega de controlar l'ordre dels paquets, a l'enviar els paquets es numeren i a recepció, s'ordenen abans de ser processats.
+
+2.**Protocol UDP**
+
+UDP (User Datagram Protocol) és un protocol sense connexió, que no garanteix la fiabilitat de la transmissió, però és més ràpid que TCP.
+
+UDP envia datagrames sense establir connexió, sense confirmació i sense ordre. Usa una capçalera fixa de 8 bytes.
+
+Analogia de la ràdio: TCP és un correu certificat (signa el carter, el paquet torna si no arriba); UDP és un megàfon (emets i segueixes, encara que algú no t’escolti).
+
+Casos típics de UDP:
+
+- Streaming i VoIP: millor perdre un paquet que congelar la trucada. S'usen algoritmes amb correcció d'errors per reconstruir la informació perduda.
+- Jocs online: la rapidesa és vital, i si es perd un paquet, el següent ja porta la informació actualitzada.
+
+3.**Resum**
+
+- TCP garanteix lliurament i ordre mitjançant handshake, numeració de segments i ACKs.
+- UDP és lleuger i sense connexió: perfecte per a temps real.
+
+Cal triar segons la prioritat: dades íntegres (TCP) o fluïdesa (UDP).
+
+## Application Layer (Capa d’Aplicació)
+
+Al final usem els ordinadors mitjançant aplicacions, com ara navegadors web, clients de correu electrònic, etc. La capa d’aplicació és la que ofereix els serveis necessaris per a que les aplicacions puguin comunicar-se entre elles.
+
+Aquesta capa és equivalent a les capes 5, 6 i 7 del model OSI (Sessió, Presentació i Aplicació), perquè  les funcions d’aquestes capes s’implementen en el software de les aplicacions.
+
+Alguns exemples de protocols d'aquesta capa són: HTTP (responsable dels serveis web), FTP (responsable de la transferència de fitxers), SMTP (responsable del correu electrònic), DNS (responsable de la resolució de noms de domini).
+
+## Encapsulament de dades
+
+Vegem un exemple senzill, on es comença amb una petició HTTP (GET /index.html) i es va encapsulant a mesura que passa per les diferents capes de la pila TCP/IP.
+
+```data
+[Dades d'aplicació]           ← Capa 7 (HTTP: "GET /index.html")
+     ↓
+[TCP | Dades]                   ← Capa 4 (afegeix ports, seq, ack) → SEGMENT
+     ↓
+[IP | TCP | Dades]              ← Capa 3 (afegeix IPs origen/destí) → PAQUET
+     ↓
+[Ethernet | IP | TCP | Dades | FCS]  ← Capa 2 (afegeix MACs + CRC) → TRAMA
+     ↓
+[1011010010111010...]           ← Capa 1 (bits en el cable)
+```
+
+🎯 Punts clau:
+
+- Cada capa afegeix informació, mai la treu (excepte a destí).
+- El contingut viatja “protegit” de dins cap a fora: el que és “dades” per una capa és només el payload de la capa inferior.
+- Els encapçalaments no es modifiquen en ruta, excepte camps concrets (p. ex. el TTL de l’IP, que decreix router a router).
+
+Al destí, cada capa treu la seva capçalera i passa el contingut a la capa superior:
+
+```data
+Bits → Capa 1: reconstrueix la trama
+     → Capa 2: treu Ethernet, comprova l'FCS → queda el PAQUET IP
+     → Capa 3: treu IP, comprova el checksum → queda el SEGMENT TCP
+     → Capa 4: treu TCP, ordena els segments → queden les DADES
+     → Capa 7: el navegador interpreta el GET
+```

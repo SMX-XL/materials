@@ -98,7 +98,7 @@ Des del RP ha d’anar un cable per cada presa de treball (enllaç exclusiu). Aq
 
 Serveix per unir els repartidors de planta (RP) amb el repartidor d’edifici (RE), s'utilitza Fibra òptica (OM3 o OM4) per dades i cable de categoria 3 (telefònic) per telefonia convencional, tot i que cada cop és més habitual usar únicament enllaços de fibra òptica a l'usar telefonia per IP (VoIP).
 
-A diferència del cablejat horitzontal, aquí els enllaços no són exclusius, sinó que es comparteixen entre diversos punts de treball, típicament un enllaç de fibre per cada 24 preses de treball.
+A diferència del cablejat horitzontal, aquí els enllaços no són exclusius, sinó que es comparteixen entre diversos punts de treball, típicament un enllaç de fibra per cada 24 preses de treball.
 
 ## Distribució del cablejat
 

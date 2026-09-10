@@ -8,9 +8,9 @@ Quan parlem de transmissió en el món de les xarxes locals, un punt important �
 
 Tenint en compte la direcció de la transmissió, podem distingir tres tipus de transmissió:
 
--**Símplex**: les dades viatgen en un sol sentit. És a dir, hi ha un únic emissor. Exemple: la TV.
--**Half dúplex**: la informació viatja en els dos sentits, però de manera alternativa. Exemple: els walkie.
--**Full dúplex**: les dades s’envien en els dos sentits i de forma simultània. Exemple: telèfon.
+- **Símplex**: les dades viatgen en un sol sentit. És a dir, hi ha un únic emissor. Exemple: la TV.
+- **Half dúplex**: la informació viatja en els dos sentits, però de manera alternativa. Exemple: els walkie.
+- **Full dúplex**: les dades s’envien en els dos sentits i de forma simultània. Exemple: telèfon.
 
 Un altre aspecte a tenir en compte és com es mesura la velocitat de transmissió de dades. Aquesta velocitat es mesura indicant el cabal de **bits per segon (bps)**. Per aquesta unitat, s'utilitzen els prefixos del Sistema Internacional, com ara Kbps (kilobits per segon), Mbps (megabits per segon) o Gbps (gigabits per segon), que corresponen a potències de 10 (10^3, 10^6 i 10^9, respectivament). Per exemple, una connexió a Internet de 100 Mbps significa que es poden transmetre fins a 100 milions de bits per segon.
 
@@ -44,9 +44,11 @@ Aquesta adreça té 48 bits:
 - 24 primers identifiquen fabricant
 - 24 següents identifiquen l’equip
 
-Es representa en format hexadecimal: 00:30:1b:b7:cd:b6
+Es representa en format hexadecimal: `00:30:1b:b7:cd:b6`
 
 És una adreça **única** que es registra al hardware de l’adaptador. Un equip té una adreça MAC per cada adaptador de xarxa que tingui.
+
+[Mac Address Lookup](https://macaddresslookup.io/es)
 
 #### Control del mitjà
 
@@ -187,6 +189,11 @@ Són els dispositius que s'encarreguen de gestionar el trànsit de dades a la xa
 ![router](./media/router.png)
 
 > Router. Atribució: [tp-link](https://www.tp-link.com)
+
+- **Access point**: és el dispositiu que permet connectar els equips sense fils (WiFi) a la xarxa local. L'access point s'encarrega de transmetre i rebre les dades entre els dispositius sense fils i el switch o router de la xarxa local.
+
+![Access point](./media/access-point.png)
+> Access point. Atribució: [tp-link](https://www.tp-link.com/es/home-networking/access-point/tl-wa3001/)
 
 ### Elements estructurals
 
