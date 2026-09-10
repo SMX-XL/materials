@@ -1,4 +1,4 @@
-# UD7. Capa Internet: Adreces IP i protocols de encaminament
+# UD7. Capa Internet: Adreces IP i protocols d'encaminament
 
 Com s'ha dit abans, la funció d'aquesta capa és la de transmetre paquets de dades entre dispositius que poden estar en xarxes diferents, aquesta capa és gestionada bàsicament per tres protocols:
 
