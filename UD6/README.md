@@ -96,11 +96,9 @@ TCP és un protocol orientat a connexió, que garanteix que els paquets de dades
 
 UDP (User Datagram Protocol) és un protocol sense connexió, que no garanteix la fiabilitat de la transmissió, però és més ràpid que TCP.
 
-UDP envia datagrames sense establir connexió, sense confirmació i sense ordre. Usa una capçalera fixa de 8 bytes.
+Analogia de correu postal: TCP és un correu certificat (signa el carter, el paquet torna si no arriba); UDP és una carta normal (s'envia i te n'oblides, encara que no arribi a destí).
 
-Analogia de la ràdio: TCP és un correu certificat (signa el carter, el paquet torna si no arriba); UDP és un megàfon (emets i segueixes, encara que algú no t’escolti).
-
-Casos típics de UDP:
+Casos típics d'ús del UDP:
 
 - Streaming i VoIP: millor perdre un paquet que congelar la trucada. S'usen algoritmes amb correcció d'errors per reconstruir la informació perduda.
 - Jocs online: la rapidesa és vital, i si es perd un paquet, el següent ja porta la informació actualitzada.
@@ -151,3 +149,9 @@ Bits → Capa 1: reconstrueix la trama
      → Capa 4: treu TCP, ordena els segments → queden les DADES
      → Capa 7: el navegador interpreta el GET
 ```
+
+## Resum
+
+En aquesta unitat hem vist en què consisteix la pila de protocols TCP/IP, quines són les seves capes i quins protocols s’utilitzen en cada capa. També hem vist com es produeix l’encapsulament de dades a mesura que passen per les diferents capes de la pila.
+
+En la unitat següent ens centrarem en la capa de Internet, dedicant especial atenció al protocol IP i a les adreces IP, que són fonamentals per al funcionament d’Internet. També veurem com es produeix l’encaminament de paquets a través de la xarxa i com es poden configurar les adreces IP en els dispositius de la xarxa.
