@@ -6,8 +6,9 @@ RA3. Interconnecta equips en xarxes locals cablejades descrivint estàndards de 
 
 ## Introducció
 
-La xarxa local cablejada és un element vital per a qualsevol organització que usi ordinadors per la seva activitat. Una instal·lació adequada assegura un bon funcionament i un manteniment senzill.
+Us imagineu una xarxa local sense cap organització? Els cables estirats per terra, els dispositius apilats sense ordre i sense protecció, etc. Seria un caos i seria molt difícil de mantenir i solucionar problemes.
 
+Per tant, una xarxa local necessita elements estructurals que permetin la distribució i connexió dels dispositius des d'un punt de vista físic. Aquests elements inclouen:
 ![Exemples de cablejat mal estructurat](./media/cablejat-mal.png)
 
 > Exemples de cablejat mal estructurat. Atribució: desconeguda
@@ -100,15 +101,71 @@ Serveix per unir els repartidors de planta (RP) amb el repartidor d’edifici (R
 
 A diferència del cablejat horitzontal, aquí els enllaços no són exclusius, sinó que es comparteixen entre diversos punts de treball, típicament un enllaç de fibra per cada 24 preses de treball.
 
+## Repartidors
+
+Són els elements on s'instal·len els dispositius de xarxa (switch, router, etc.) i on es connecten els cables de la xarxa local.Això permet una organització i gestió eficient del cablejat i dels dispositius de la xarxa local. En funció de la mida de la instal·lació, es poden tenir repartidors de planta (RP), de centre d’edifici (RE) i de campus (RC). En instal·lacions petites, només es disposa d’un repartidor únic, que fa la funció de RP i RE alhora.
+
+Aquests repartidors es poden ubicar en sales tècniques, amb control d'accés i control de clima o en casos més senzills, pot ser un armari a un despatx o sala compartida. En qualsevol cas, cal que estiguin ventilats i amb un sistema de refrigeració adequat, ja que els equips actius generen calor.
+
+Dins el repartidor, a part de l'electrònica de xarxa (switch, routers), hi haurà els panells de connexió, endolls per l'alimentació, així com altres elements de gestió i organització del cablejat, com ara guies de cables, brida, etc. També si és necessari pot haver-hi equips de protecció elèctrica, com ara protectors de sobretensió o SAI (Sistema d'Alimentació Ininterrompuda), servidors de xarxa, etc.
+
+![Repartidor](./media/repartidor.png)
+
+> Repartidors. Atribució: [Cableado Estructurado Perú](https://cableadoestructurado.pe/mantenimiento-y-organizacion-de-racks-claves-para-un-cableado-estructurado-eficiente/)
+
+Poden ser armaris (tancats) o racks (oberts) en funció de les necessitats de seguretat (en sales dedicades és habitual usar racks i quan el distribuidor s'ha d'instal·lar en un lloc accessible a tothom, com ara un despatx, s'usen armaris tancats amb pany).
+
+Les amplades són estàndards, sent la més habitual la de 19” estàndard o 10” (versió estreta). L’alçada es mira en U,s ( 1,75” o 44,45 mm) que és l’alçada mínima d’un element de rack.
+
+![Amplada rack 19"](./media/rack1.png)
+
+Quant l'alçada, aquesta no s'indica en centímetres, sinó en unitats de rack (U). Cada unitat de rack (1U) té una alçada de 1,75 polzades (44,45 mm). Això permet estandarditzar la mida dels dispositius que s'instal·len en els racks i facilita la seva organització.
+
+![Alçada rack](./media/rack2.png)
+
+El disseny del repartidor ha  de tenir en compte una previsió d'espai per a futurs creixements de la xarxa, per això, un cop es dimensiona, es deixa una reseva del 30%.
+
+### Elements d’interconnexió
+
+Als repartidors arribaran els cables provinent dels diferents punts de la xarxa local. Aquests cables s'han de connectar als dispositius de xarxa i per això s'utilitzen elements d'interconnexió com ara panells de connexió (patch panels) o regletes de connexió que es trobaran als repartidors.
+
+Aquests elements intermedis permeten una connexió ordenada i fàcil de gestionar, ja que els cables es poden connectar i desconnectar sense haver de manipular directament els dispositius de xarxa.
+
+Per una correcta organització, conjuntament amb els panells, es disposaran passacables i guies de cablejat que permeten mantenir els cables ordenats i protegits.
+
+![Panell de connexió](./media/panel.png)
+
+> Panell de connexió. Atribució: [Eziblank](https://eziblank.com/blog/2022/11/29/patch-panel-what-it-is-and-why-your-data-center-needs-it/)
+
+### Organització del cablejat
+
+Per evitar que els tirantets al repartidor quedin enredats, desordenats i difícils de gestionar, es poden utilitzar guies de cablejat, que són elements metàl·lics o plàstics que permeten organitzar els cables i mantenir-los en ordre.
+
+D'aquesta manera, es facilita la identificació dels cables i es redueix el risc de danys als cables i als connectors.
+
+![Guies de cablejat](./media/guies.png)
+
+> Mateixa instal·lació sense guies de cablejat (esquerra) i amb guies de cablejat (dreta). Atribució: Fons propi.
+
 ## Distribució del cablejat
 
-El cablejat obligatòriament s’ha de distribuir per canalitzacions:
+Ja us podeu imaginar que una xarxa els cables no poden anar per qualsevol lloc (enganxats per la paret, tirats a sobre les plaques del fals sostre, etc.), sinó que han d'estar protegits i organitzats. Per això s'utilitzen conduccions aèries, de superfície (parets) o subterrànies (terre tècnic).
 
-- Tub corrugat: per instal·lacions encastades.
-- Canaletes: típiques per distribuir per superfície (parets), habitualment de plàstic o alumini.
-- Safates: metàl·liques o de plàstic. Se solen usar en la distribució per sostre o per terra tècnic.
+Aquests conductes permeten una instal·lació segura i ordenada del cablejat, evitant danys als cables i facilitant el manteniment de la xarxa local.
 
-Aquestes canalitzacions poden anar per les parets (encastades o per superfície), pel sostre (sostre tècnic) o pel terra (terra tècnic). En qualsevol cas, s’ha de procurar que el recorregut sigui el més curt possible, però de forma longitudinal o transversal a la superfície, evitant corbes i girs bruscos.
+![Conductes pel cablejat](./media/conductes.png)
+
+> Conductes pel cablejat. Atribució: Imatge generada amb Google Gemini.
+
+Els tipus de conduccions més habituals són:
+
+- **Safates de cablejat**: són safates metàl·liques o de plàstic que es poden instal·lar pel sostre, per sota el terre tècnic o per les parets. Són la solució habitual quan el volum de cables és gran. Permet una bona organització dels cables, facilitant l'accés.
+
+- **Canaletes**: són conductes de plàstic que es poden instal·lar a les parets o mobiliari. Són una bona solució per distribuir el cablejat fins els llocs de treball.
+
+- **Tubs**: solució similar a la que s'utilitza per les instal·lacions elèctriques o de comunicacions a l'àmbit domèstic. Habitualent tub corrugat de plàstic per la seve flexibilitat, tot i que per conduccions verticals amb molt de cablejat es poden usar tubs rígids. És la solució típica per entorns domèstics o petits despatxos, on el volum de cablejat és reduït i es vol mantenir la instal·lació encastada. Es perd força flexibilitat, perquè els canvis són més complexos.
+
+Indepdendement de per on passin els cables, cal tenir en compte que el recorregut sigui el més curt possible, però de forma longitudinal o transversal a la superfície, evitant corbes i girs bruscos per evitar danyar el cablejat o la fibra.
 
 A més, cal evitar les interferències electromagnètiques, per la qual cosa s’ha de procurar que el cablejat no passi a prop de fonts d’interferència com ara motors, fluorescents, transformadors, etc. i en el cas de les pròpies canalitzacions, s'ha de separar el cablejat de dades del cablejat elèctric, almenys fins els darrers 15 m. abans arribar a la presa de treball.
 
