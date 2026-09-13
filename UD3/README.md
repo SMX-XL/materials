@@ -86,6 +86,24 @@ Finalment, Ethernet va passar a un model de transmissió full dúplex, de manera
 
 ![Trama Ethernet](./media/frame.png)
 
+### Power over Ethernet (PoE)
+
+És una tecnologia que permet subministrar energia elèctrica a dispositius de xarxa a través del mateix cable de dades. Això elimina la necessitat d’una font d’alimentació separada per a aquests dispositius, com ara punts d’accés Wi-Fi, telèfons IP o càmeres de seguretat.
+
+I com es fa? A través de l’ús de parells de cables que no s’utilitzen per a la transmissió de dades, actualment en cables de 4 parells, s’utilitzen els parells 1 i 2 per a la transmissió de dades i els parells 3 i 4 per subministrar energia elèctrica. Aquesta tecnologia és compatible amb diferents estàndards IEEE 802.3af (PoE), IEEE 802.3at (PoE+), IEE 802.3bt Type3 (PoE++) i IEEE 802.3bt Type4 (Hi-PoE) que defineixen la potència màxima que es pot subministrar a través del cable.
+
+| Estàndard | Potència màxima (W) | Usos típics                                         |
+|-----------|---------------------|------------                                         |
+| PoE       | 15,4                | Càmeres IP, telèfons IP                             |
+| PoE+      | 30                  | Càmeres PTZ, Pantalles LED, punts d’accés Wi-Fi     |
+| PoE++     | 60                  | Sis. videoconferència, il·luminació LED, AP Wi-Fi 7 |
+| Hi-PoE    | 100                 | Thin clients, AP Wi-Fi                              |
+
+Per injectar l'energia elèctrica al cable de xarxes hi ha dos tipus de dispositius:
+
+- **Injector PoE**: és un dispositiu que s’interposa entre el switch i el dispositiu alimentat. Aquest dispositiu injecta l’energia elèctrica al cable de xarxa, permetent que el dispositiu final rebi tant dades com energia a través del mateix cable.
+- **Switch PoE**: és un switch que té la capacitat d’injectar energia elèctrica als cables de xarxa connectats als seus ports. Això permet alimentar dispositius PoE sense necessitat d’un injector addicional.
+
 ## Elements xarxa local
 
 Una xarxa local està formada per diversos elements, que permeten interconnectar els dispositius finals entre sí i amb altres xarxes, aquí s'inclouen des dels elements físics necessaris per establir la connexió, l'electrònica que permet la transmissió de dades, però també els elements físics que permeten la distribució i connexió dels dispositius:
@@ -96,9 +114,6 @@ Una xarxa local està formada per diversos elements, que permeten interconnectar
 - Connectors.
 - Targetes de xarxa (NIC).
 - Electrònica de xarxa (switch, router).
-- Repartidors (armaris i racks).
-- Elements d’interconnexió.
-- Conductes pel cablejat.
 
 ### Cablejat: parells de coure trenats
 
@@ -194,61 +209,3 @@ Són els dispositius que s'encarreguen de gestionar el trànsit de dades a la xa
 
 ![Access point](./media/access-point.png)
 > Access point. Atribució: [tp-link](https://www.tp-link.com/es/home-networking/access-point/tl-wa3001/)
-
-### Elements estructurals
-
-Us imagineu una xarxa local sense cap organització? Els cables estirats per terra, els dispositius apilats sense ordre i sense protecció, etc. Seria un caos i seria molt difícil de mantenir i solucionar problemes.
-
-![Caos a la xarxa local](./media/caos.png)
-
-> Exemple de caos a la xarxa local. Atribució: Imatge generada amb Google Gemini.
-
-Per tant, una xarxa local necessita elements estructurals que permetin la distribució i connexió dels dispositius des d'un punt de vista físic. Aquests elements inclouen:
-
-#### Repartidors
-
-Són els armaris o racks on s'instal·len els dispositius de xarxa (switch, router, etc.) i on es connecten els cables de la xarxa local. Això permet una organització i gestió eficient del cablejat i dels dispositius de la xarxa local.
-
-![Repartidor](./media/repartidor.png)
-
-> Repartidors. Atribució: [Cableado Estructurado Perú](https://cableadoestructurado.pe/mantenimiento-y-organizacion-de-racks-claves-para-un-cableado-estructurado-eficiente/)
-
-Poden ser armaris (tancats) o racks (oberts) en funció de les necessitats de seguretat (en sales dedicades és habitual usar racks i quan el distribuidor s'ha d'instal·lar en un lloc accessible a tothom, com ara un despatx, s'usen armaris tancats amb pany).
-
-Les amplades són estàndards, sent la més habitual la de 19” estàndard o 10” (versió estreta). L’alçada es mira en U,s ( 1,75” o 44,45 mm) que és l’alçada mínima d’un element de rack.
-
-![Amplada rack 19"](./media/rack1.png)
-
-Quant l'alçada, aquesta no s'indica en centímetres, sinó en unitats de rack (U). Cada unitat de rack (1U) té una alçada de 1,75 polzades (44,45 mm). Això permet estandarditzar la mida dels dispositius que s'instal·len en els racks i facilita la seva organització.
-
-![Alçada rack](./media/rack2.png)
-
-#### Elements d’interconnexió
-
-Als repartidors arribaran els cables provinent dels diferents punts de la xarxa local. Aquests cables s'han de connectar als dispositius de xarxa i per això s'utilitzen elements d'interconnexió com ara panells de connexió (patch panels) o regletes de connexió que es trobaran als repartidors.
-
-Aquests elements intermedis permeten una connexió ordenada i fàcil de gestionar, ja que els cables es poden connectar i desconnectar sense haver de manipular directament els dispositius de xarxa.
-
-Per una correcta organització, conjuntament amb els panells, es disposaran passacables i guies de cablejat que permeten mantenir els cables ordenats i protegits.
-
-![Panell de connexió](./media/panel.png)
-
-> Panell de connexió. Atribució: [Eziblank](https://eziblank.com/blog/2022/11/29/patch-panel-what-it-is-and-why-your-data-center-needs-it/)
-
-#### Conductes pel cablejat
-
-Ja us podeu imaginar que una xarxa els cables no poden anar per qualsevol lloc (enganxats per la paret, tirats a sobre les plaques del fals sostre, etc.), sinó que han d'estar protegits i organitzats. Per això s'utilitzen conduccions aèries, de superfície (parets) o subterrànies (terre tècnic).
-
-Aquests conductes permeten una instal·lació segura i ordenada del cablejat, evitant danys als cables i facilitant el manteniment de la xarxa local.
-
-![Conductes pel cablejat](./media/conductes.png)
-
-> Conductes pel cablejat. Atribució: Imatge generada amb Google Gemini.
-
-Els tipus de conduccions més habituals són:
-
-- **Safates de cablejat**: són safates metàl·liques o de plàstic que es poden instal·lar pel sostre, per sota el terre tècnic o per les parets. Són la solució habitual quan el volum de cables és gran. Permet una bona organització dels cables, facilitant l'accés.
-
-- **Canaletes**: són conductes de plàstic que es poden instal·lar a les parets o mobiliari. Són una bona solució per distribuir el cablejat fins els llocs de treball.
-
-- **Tubs**: solució similar a la que s'utilitza per les instal·lacions elèctriques o de comunicacions a l'àmbit domèstic. Habitualent tub corrugat de plàstic per la seve flexibilitat, tot i que per conduccions verticals amb molt de cablejat es poden usar tubs rígids. És la solució típica per entorns domèstics o petits despatxos, on el volum de cablejat és reduït i es vol mantenir la instal·lació encastada. Es perd força flexibilitat, perquè els canvis són més complexos.
