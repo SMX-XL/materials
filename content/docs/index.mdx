@@ -1,13 +1,308 @@
 ---
-title: Hello World
-description: Your first document
+title: Xarxes Locals
+description: Documentació del mòdul 0225 · Xarxes Locals del cicle SMX.
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
-## What is Next?
+# Xarxes Locals
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+> Mòdul 0225 · Sistemes Microinformàtics i Xarxes
+
+Benvingut/da a la documentació de **Xarxes Locals**.
+
+Aquest espai recopila els materials del mòdul i els presenta en una plataforma de documentació moderna, estructurada i pensada per facilitar la consulta dels continguts.
+
+<Callout type="info" title="Comença per aquí">
+Si és la primera vegada que treballes amb els continguts, et recomanem seguir les unitats didàctiques en ordre.
+</Callout>
+
+## Continguts del mòdul
+
+La documentació està dividida en set unitats didàctiques.
+
+| Unitat | Contingut |
+| --- | --- |
+| UD1 | Introducció a les xarxes locals |
+| UD2 | Arquitectura de xarxes |
+| UD3 | Elements d'una xarxa local |
+| UD4 | Seguretat i protecció mediambiental |
+| UD5 | Instal·lació física de la xarxa |
+| UD6 | Pila de protocols TCP/IP |
+| UD7 | Capa Internet |
+
+## Comença a estudiar
+
+<Steps>
+
+<Step>
+
+### UD1 · Introducció a les xarxes locals
+
+Conceptes fonamentals sobre xarxes locals, classificació de xarxes i conceptes bàsics de comunicació.
+
+[Començar la UD1 →](/docs/ud1)
+
+</Step>
+
+<Step>
+
+### UD2 · Arquitectura de xarxes
+
+Arquitectura, models de comunicació i principis sobre els quals es construeixen les xarxes.
+
+[Començar la UD2 →](/docs/ud2)
+
+</Step>
+
+<Step>
+
+### UD3 · Elements d'una xarxa local
+
+Dispositius, components i elements físics que formen part d'una xarxa local.
+
+[Començar la UD3 →](/docs/ud3)
+
+</Step>
+
+<Step>
+
+### UD4 · Seguretat i protecció mediambiental
+
+Seguretat, prevenció de riscos i bones pràctiques relacionades amb equips i instal·lacions de xarxa.
+
+[Començar la UD4 →](/docs/ud4)
+
+</Step>
+
+<Step>
+
+### UD5 · Instal·lació física de la xarxa
+
+Cablatge estructurat, connectors, eines i instal·lació física d'una infraestructura de xarxa.
+
+[Començar la UD5 →](/docs/ud5)
+
+</Step>
+
+<Step>
+
+### UD6 · Pila de protocols TCP/IP
+
+Funcionament de la pila TCP/IP i principals protocols utilitzats en les comunicacions de xarxa.
+
+[Començar la UD6 →](/docs/ud6)
+
+</Step>
+
+<Step>
+
+### UD7 · Capa Internet
+
+Adreçament IP, xarxes, subxarxes i protocols relacionats amb la capa Internet.
+
+[Començar la UD7 →](/docs/ud7)
+
+</Step>
+
+</Steps>
+
+## Com utilitzar la documentació
+
+Pots navegar pels continguts de diverses maneres.
+
+<Tabs items={['Navegació', 'Cerca', 'Ordre recomanat']}>
+
+<Tab value="Navegació">
+
+Utilitza el menú lateral per moure't entre les diferents unitats i apartats.
+
+</Tab>
+
+<Tab value="Cerca">
+
+Utilitza la cerca integrada de Fumadocs per trobar ràpidament conceptes, protocols, dispositius o qualsevol altre terme.
+
+</Tab>
+
+<Tab value="Ordre recomanat">
+
+Per començar des de zero, segueix les unitats en ordre:
+
+```text
+UD1 → UD2 → UD3 → UD4 → UD5 → UD6 → UD7
+```
+
+</Tab>
+
+</Tabs>
+
+<Callout type="warn" title="Important">
+    Els continguts poden evolucionar amb el temps. Si detectes una errada o informació que cal actualitzar, consulta el repositori del projecte o obre una proposta de canvi.
+</Callout>
+
+## Tecnologia
+
+Aquesta nova documentació està construïda amb una pila moderna orientada a documentació tècnica.
+
+<Tabs items={['Frontend', 'Documentació', 'Contingut']}>
+<Tab value="Frontend">
+
+```text
+Next.js
+React
+TypeScript
+Tailwind CSS
+```
+
+</Tab>
+<Tab value="Documentació">
+
+```text
+Fumadocs
+Fumadocs MDX
+MDX
+Shiki
+```
+
+</Tab>
+<Tab value="Contingut">
+
+```text
+Markdown
+MDX
+Git
+GitHub
+```
+
+</Tab>
+</Tabs>
+
+Fumadocs s'encarrega de bona part de la infraestructura de documentació, incloent-hi la navegació, el processament MDX, la cerca i els components de la interfície.
+
+## Sobre la modernització
+
+Els materials existents s'han reorganitzat i adaptat a una nova infraestructura de documentació web.
+
+L'objectiu és facilitar:
+
+* la navegació pels continguts;
+* la cerca d'informació;
+* el manteniment dels materials;
+* l'actualització dels continguts;
+* l'accés des de diferents dispositius;
+* la incorporació de nous materials;
+* la contribució mitjançant Git i GitHub.
+
+<Callout type="info" title="Documentació com a codi">
+Els continguts formen part del mateix repositori que la infraestructura de documentació. Això permet revisar els canvis mitjançant Git, Pull Requests i l'historial del projecte.
+</Callout>
+
+## Contribuir
+
+Si vols proposar una millora, pots seguir aquest flux:
+
+<Steps>
+<Step>
+
+### Localitza el problema
+
+Busca errors de contingut, enllaços incorrectes, informació desactualitzada o possibles millores.
+
+</Step>
+<Step>
+
+### Proposa el canvi
+
+Crea un Issue o prepara un Pull Request amb els canvis corresponents.
+
+</Step>
+<Step>
+
+### Revisa la documentació
+
+Comprova que els continguts siguin correctes i que la documentació es pugui construir sense errors.
+
+</Step>
+<Step>
+
+### Comparteix el canvi
+
+Envia el Pull Request perquè pugui ser revisat i incorporat al projecte.
+
+</Step>
+</Steps>
+
+## Autoria i contribucions
+
+### Material original
+
+Carlos Alonso Martínez
+
+Escola Pia de Mataró
+
+### Documentació i modernització
+
+Artur Subiña
+
+Migració dels materials, arquitectura de la documentació, desenvolupament de la plataforma web i modernització de l'experiència de consulta.
+
+<Callout type="info" title="Sobre les atribucions">
+El contingut educatiu original i les contribucions de modernització es mantenen diferenciats per deixar constància de l'autoria i de les diferents aportacions al projecte.
+</Callout>
+
+## Llicència
+
+Els materials es distribueixen sota:
+
+### Creative Commons BY-NC-SA 4.0
+
+La llicència permet compartir i adaptar els materials sempre que es compleixin les seves condicions.
+
+<Tabs items={['BY', 'NC', 'SA']}>
+<Tab value="BY">
+
+### Attribution
+
+Cal donar el crèdit corresponent als autors del material.
+
+</Tab>
+<Tab value="NC">
+
+### NonCommercial
+
+No es permet l'ús comercial del material.
+
+</Tab>
+<Tab value="SA">
+
+### ShareAlike
+
+Les adaptacions s'han de distribuir sota la mateixa llicència.
+
+</Tab>
+</Tabs>
+
+[Consultar el text complet de la llicència →](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## Recursos
+
+| Recurs       | Enllaç                                                                |
+| ------------ | --------------------------------------------------------------------- |
+| Documentació | [/docs](/docs)                                                        |
+| Repositori   | [GitHub](https://github.com/SMX-XL/materials)                         |
+| Fumadocs     | [fumadocs.dev](https://www.fumadocs.dev/)                             |
+| Llicència    | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+
+---
+
+### 0225 · Xarxes Locals
+
+Sistemes Microinformàtics i Xarxes · SMX
+
+Material original de Carlos Alonso Martínez i Escola Pia de Mataró.
+
+Documentació i modernització per Artur Subiña.
+
