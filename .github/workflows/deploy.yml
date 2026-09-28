@@ -3,6 +3,8 @@ name: Deploy
 on:
   push:
     branches:
+      - main
+      - master
       - feat/fumadocs-docs-pr
   workflow_dispatch:
 
