@@ -296,3 +296,7 @@ Interface 192.168.1.12
   192.168.1.1           00-1a-2b-3c-4d-5e     dynamic
   192.168.1.2           00-1a-2b-3c-4d-5f     dynamic
 ```
+
+## Resum
+
+En aquesta unitat hem vist com funciona la capa Internet del model TCP/IP, que és la capa que permet la comunicació entre dispositius de xarxes diferents. S'ha estudiat com es gestionen les adreces IP, com s'identifiquen els dispositius mitjançant adreces IP, com es poden dividir les xarxes en subxarxes més petites, com es fa l'encaminament dels paquets de dades i com es poden traduir les adreces IP en adreces MAC mitjançant el protocol ARP.
