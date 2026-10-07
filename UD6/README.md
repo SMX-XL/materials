@@ -14,12 +14,7 @@ La pila TCP/IP ofereix comunicació entre serveis utilitzant xarxes físiques he
 
 Com pràcticament totes les arquitectures, és un model en capes, on cada capa té una funció concreta i ofereix serveis a la capa superior. La pila TCP/IP té quatre capes:
 
-```mermaid
-graph TD
-    A[Aplicació] --> B[Transport]
-    B --> C[Internet]
-    C --> D[Accés a la xarxa]
-```
+![Arquitectura de la pila TCP/IP](media/tcp-ip.png)
 
 Si recordeu, el model OSI de referència té 7 capes, mentre que la pila TCP/IP només en té 4. Això és degut a que algunes de les capes del model OSI s’han agrupat en una sola capa a la pila TCP/IP, bàsicament perquè s'agrupen pel component hardware o software que les implementa.
 
