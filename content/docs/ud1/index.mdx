@@ -1,0 +1,169 @@
+---
+title: UD1 Introducció
+---
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# UD1-Introducció a les xarxes locals
+
+> RA1. Reconeix l'estructura de xarxes locals cablejades analitzant-ne les característiques d'entorns d'aplicació i descrivint-ne la funcionalitat dels seus components.
+
+## Xarxes de computadors
+
+Conjunt de dos o més equips informàtics, no cal que siguin els típics ordinadors que teniu en ment, poden ser mòbils, impressores, smartTV, etc. connectats entre sí per proporcionar:
+
+- Comunicació (enviament missatges)
+- Compartir recursos (baixar arxius de la Comuna)
+- Compartir informació (treballeu sobre el mateix document de text).
+
+### Antecedents històrics
+
+Els primers ordinadors (ENIAC, UNIVAC, etc.) eren molt grans i a més es trobaven aillats. Si calia compartir informació entre ells, calia fer-ho mitjançant dispostius d'emmagatzematge externs: al principi targetes perforades, després cintes magnètiques i finalment discs durs.
+
+![IBM 2401 tape drives at the Computer History Museum](./media/IBM_2401_tape_drives_at_the_Computer_History_Museum.png)
+
+> **Imatge 1:** Unitats de cinta IBM 2401 al Computer History Museum. Atribució: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_2401_tape_drives_at_the_Computer_History_Museum.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en), via Wikimedia Commons.
+
+Posteriorment, es va veure la necessitat de connectar directament els ordinadors entre ells. I com es podia fer? Doncs aprofitant les línies de telèfon que ja existien. Els ordinadors *parlaven* fent-se una trucada telefònica. Per aconseguir això, calia un dispositiu que convertís els senyals digitals de l'ordinador en senyals analògics que poguessin viatjar per la línia telefònica. Aquest dispositiu es coneix com a *modem* (modulador-demodulador).
+
+![Modem](./media/Atari_800XL_with_Modem.png)
+
+> **Imatge 2:** Atari 800XL amb un modem. Atribució: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Atari_800XL_with_Modem.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en), via Wikimedia Commons.
+
+Això era una forma molt limitada, de manera que a Estats Units a la dècada dels 60 es va dissenyar un sistema de xarxa de computadors que permetia connectar diversos ordinadors entre ells. Aquest sistema es va batejar com ARPANET i va ser el precursor de l'Internet actual.
+
+<Callout type="info">
+💡ARPANET (Advanced Research Projects Agency Network) era una xarxa de comunicacions que va ser creada per l'Agència de Projectes de Recerca Avançada del Departament de Defensa dels Estats Units (ARPA) i va fer la primera transmissió de dades entre ordinadors el 29 d'octubre de 1969 entre UCLA i Stanford.
+</Callout>
+
+## Classificació de les xarxes segons la seva mida
+
+A l’hora de classificar les xarxes podem usar diversos criteris, un d’habitual és la mida de la xarxa, és a dir, ens fixarem en quina extensió geogràfica està coberta per la xarxa. Aquesta classificació és significativa, perquè la mida de la xarxa determina aspectes claus de la tecnologia de la xarxa.
+
+Atenent a la mida de la xarxa, podem distingir:
+
+- **Xarxes d’àrea personal** (PAN, Personal Area Network): són xarxes que cobreixen un espai molt reduït, com ara una habitació. Normalment connecten dispositius personals com ara ordinadors portàtils, telèfons mòbils, impressores i altres dispositius electrònics. Un exemple de PAN és la connexió Bluetooth entre un telèfon i uns auriculars sense fils.
+
+- **Xarxes d’àrea local** (LAN, Local Area Network): són xarxes que cobreixen un espai més gran, com ara una oficina, un edifici o un campus universitari. Les LAN permeten la connexió de diversos dispositius dins d’una àrea geogràfica limitada i ofereixen una alta velocitat de transmissió de dades. Un exemple de LAN és la xarxa dels ordinadors de l'escola. Un aspecte fonamental, és que la **infraestructura de la LAN és propietat de l’organització que la gestiona**, i per tant, és responsable del seu manteniment i seguretat.
+
+- **Xarxes d’àrea metropolitana** (MAN, Metropolitan Area Network): són xarxes que cobreixen una àrea més extensa, com ara una ciutat o una regió metropolitana.
+
+- **Xarxes d’àrea extensa** (WAN, Wide Area Network): són xarxes que cobreixen una àrea geogràfica molt gran, com ara un país o fins i tot el món sencer. Les WAN permeten la connexió de xarxes LAN i MAN a través de línies de comunicació de llarga distància, com ara cables de fibra òptica, satèl·lits o connexions de telefonia. Aquestes xarxes són **d'ús públic i compartit**, és a dir, els seus propietaris, per exemple Movistar, Vodafone, Orange, etc., ofereixen l'ús de les xarxes a canvi d'un pagament. Internet és una xarxa WAN que connecta milers de milions de dispositius arreu del món.
+
+![Classificació de les xarxes segons la seva mida](./media/tipus_xarxa.png)
+
+> **Imatge 3:** Xarxes segons la seva mida. Atribució: Miguel Carrillo Martínez sota llicència [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+> [!NOTE]
+> Aquest mòdul se centra específicament en les xarxes d’àrea local (LAN) i per tant, a partir d’ara, quan parlem de xarxa, ens referirem a una xarxa local (LAN).
+
+## Classificació de les xarxes segons el mitjà de transmissió
+
+- **Mitjans guiats**: la transmissió es produeix a través de un medi tancat, com ara cables de coure o fibra òptica, que actuen com canonades per on viatgen les dades. En el cas de les xarxes locals, els mitjans guiats seran cables de coure i fibra òptica.
+
+- **Mitjans no guiats**: la transmissió es produeix a través de un medi sense fils, bàsicament l'aire, on les dades viatgen en forma d'ones de ràdio que es propaguen a través de l'espai, com ara el WiFi o el Bluetooth.
+
+## Classificació de les xarxes segons la seva topologia
+
+Topologia és la manera com els dispositius d’una xarxa estan connectats entre si. La topologia determina com es comuniquen els dispositius, com es transmeten les dades i com es gestiona la xarxa. Hi ha diverses topologies de xarxa, cadascuna amb les seves característiques i avantatges.
+
+- **Topologia en bus**: tots els dispositius estan connectats a un únic canal de comunicació central, anomenat bus. Les dades viatgen en ambdues direccions pel bus i cada dispositiu escolta les dades que passen pel bus. Originalment, les xarxes d'ordinadors usaven aquesta tecnologia, però avui dia no s'utilitza en xarxes cablejades.
+
+![Topologia en bus](./media/topologia_bus.png)
+
+> **Imatge 4:** Topologia en bus. Atribució: [Nakivo](https://www.nakivo.com/blog/types-of-network-topology-explained/)
+
+- **Topologia en estrella**: tots els dispositius estan connectats a un dispositiu central, anomenat concentrador o switch. Les dades viatgen des del dispositiu emissor fins al dispositiu central, que les envia al dispositiu receptor. Aquesta topologia és la més utilitzada en xarxes LAN cablejades.
+
+![Topologia en estrella](./media/topologia_estrella.png)
+
+> **Imatge 5:** Topologia en estrella. Atribució: [Nakivo](https://www.nakivo.com/blog/types-of-network-topology-explained/)
+
+- **Topologia en arbre**: És una estructura jeràrquica que permet connectar diverses xarxes més petites.
+
+És la topologia d’una xarxa d’edifici (exemple l’escola) on cada xarxa local (aula) és una estrella i s’uneixen a una xarxa en arbre que les connecta entre sí i a Internet.
+
+![Topologia en arbre](./media/topologia_arbre.png)
+
+> **Imatge 6:** Topologia en arbre. Atribució: [Nakivo](https://www.nakivo.com/blog/types-of-network-topology-explained/)
+
+- **Malles**: En aquesta topologia, cada dispositiu està connectat a diversos altres dispositius, creant una xarxa de connexions múltiples. Això proporciona redundància i millora la fiabilitat de la xarxa, ja que si una connexió falla, les dades poden trobar un altre camí per arribar al seu destí. Aquesta topologia és més complexa i costosa de implementar, però és molt utilitzada en xarxes WAN i en entorns on la disponibilitat és crítica. En entorns amb pocs nodes i on la fiabilitat és important, es pot utilitzar una topologia en malla completa, on cada dispositiu està connectat a tots els altres dispositius de la xarxa. En entorns amb molts nodes, es pot utilitzar una topologia en malla parcial, on només alguns dispositius estan connectats entre sí, per oferir múltiples camins.
+
+![Topologia en malla](./media/topologia_malla.png)
+
+> **Imatge 7:** Topologia en malla. Atribució: [Nakivo](https://www.nakivo.com/blog/types-of-network-topology-explained/)
+
+- **Topologia en anell**: En aquesta topologia, els dispositius estan connectats en un cercle tancat, de manera que cada dispositiu té dos veïns. Les dades viatgen en sol sentit al llarg de l’anell fins que arriben al dispositiu receptor. Aquesta topologia va ser popular en les primeres xarxes LAN (com Token Ring), però avui dia és menys utilitzada. Hi ha una variant d’aquesta topologia, anomenada *topologia en anell doble*, on les dades poden viatjar en ambdos sentits, millorant la fiabilitat de la xarxa.
+
+![Topologia en anell](./media/topologia_anell.png)
+
+> **Imatge 8:** Topologia en anell. Atribució: [Nakivo](https://www.nakivo.com/blog/types-of-network-topology-explained/)
+
+- **Topologia híbrida**: És una combinació de dues o més topologies bàsiques. Per exemple, una organització pot tenir una topologia d'anell doble (era relativament habitual en clusters de servidors) i una topologia en estrella per connectar els ordinadors dels usuaris. Aquesta combinació permet aprofitar els avantatges de cada topologia i adaptar-se a les necessitats específiques de la xarxa.
+
+![Topologia híbrida](./media/topologia_hibrida.png)
+
+> **Imatge 9:** Topologia híbrida. Atribució: [Nakivo](https://www.nakivo.com/blog/types-of-network-topology-explained/)
+
+## Elements d’una xarxa local
+
+Una xarxa local està formada per diversos elements que treballen conjuntament per permetre la comunicació i el compartiment de recursos entre els dispositius connectats. A continuació, es descriuen els principals components d’una xarxa local:
+
+- **Dispositius finals**: Són els dispositius que utilitzen els usuaris per accedir a la xarxa i als seus recursos. Aquests poden incloure ordinadors, portàtils, telèfons mòbils, tauletes, impressores, càmeres de seguretat, entre altres. Aquests dispositius són els que generen i reben dades dins de la xarxa.
+
+- **Dispositius de xarxa**: Són els dispositius que faciliten la comunicació entre els dispositius finals i gestionen el trànsit de dades dins de la xarxa. Alguns d'aquests elements són:
+
+- **Switch**: és un dispositiu que connecta diversos dispositius finals dins d’una xarxa local i permet la comunicació entre ells. Actua com a concetrador de dades.
+
+- **Router**: és un dispositiu que connecta diferents xarxes entre si, com ara una xarxa local amb Internet. El router dirigeix el trànsit de dades entre les xarxes i assigna adreces IP als dispositius finals.
+
+- **Access point (punt d’accés)**: és un dispositiu que permet als dispositius sense fils connectar-se a la xarxa local. L’access point actua com un pont entre la xarxa cablejada i els dispositius sense fils, proporcionant cobertura Wi-Fi dins de l’àrea de la xarxa.
+
+- **Mitjans de transmissió**: Són els canals físics o sense fils a través dels quals es transmeten les dades entre els dispositius de la xarxa. Els mitjans de transmissió determinen la velocitat i la qualitat de la comunicació dins de la xarxa.
+
+- **Protocols de comunicació**: Són les regles i estàndards que defineixen com es transmeten les dades dins de la xarxa. Aquests protocols asseguren que els dispositius puguin entendre's entre si i permeten la interoperabilitat entre diferents fabricants i tecnologies.
+
+## Estàndards de xarxes locals
+
+A les primeres xarxes informàtiques, cada empresa utilitzava els seus propis estàndards per al disseny i funcionament de la xarxa en els seus productes. Quan va ser necessari connectar xarxes de diferents proveïdors, van sorgir problemes: els sistemes de transmissió no eren compatibles.
+
+Calia desfer-se de tota la instal·lació prèvia i configurar noves xarxes, totes elles del mateix tipus. Una altra solució possible va ser desenvolupar equips capaços de convertir i adaptar senyals de comunicació entre xarxes, però aquesta solució també resultava costosa i complexa. Per això, es va veure la necessitat de definir un conjunt d'estàndards estandarditzats, que permetran als fabricants i proveïdors desenvolupar productes que satisfacin les necessitats dels clients en relació amb la interconnexió de la xarxa.
+
+Els estàndards són imprescindibles per garantir la compatibilitat entre els diferents dispositius i tecnologies utilitzades en les xarxes locals. Aquests estàndards defineixen aspectes com ara els protocols de comunicació, les velocitats de transmissió, els tipus de connectors i cables, així com altres característiques tècniques que asseguren que els dispositius puguin comunicar-se entre si de manera eficient i sense problemes de compatibilitat.
+
+Habitualment, es parla de dos tipus d'estàndards:
+
+- **De facto**: també anomenats estàndards de mercat, són aquells que s'han imposat per l'ús generalitzat i l'acceptació dels usuaris, encara que no estiguin formalment reconeguts per una organització oficial. Aquests estàndards poden sorgir de la popularitat d'un producte o tecnologia específica, i poden ser adoptats per altres fabricants com a referència.
+
+- **De iure**: també anomenats estàndards oficials, són aquells que han estat formalment reconeguts i adoptats per una organització o institució oficial. Aquests estàndards són sovint el resultat de processos de normalització i tenen un caràcter legal i obligatori en determinades àrees o sectors.
+
+I qui organitza i regula aquests estàndards? Doncs hi ha diverses organitzacions que s'encarreguen de desenvolupar i mantenir els estàndards de xarxes tant. Algunes de les més rellevants a nivell d'estàndards normatius són:
+
+- **ISO (International Organization for Standardization)**: és una organització internacional que desenvolupa i publica estàndards per a una àmplia gamma d'indústries i sectors.
+
+- **EN (European Norms)**: és un organisme europeu que estableix estàndards per a productes i serveis dins de la Unió Europea. A Espanya, l'Associació Espanyola de Normalització (UNE) és l'encarregada de desenvolupar i promoure els estàndards EN.
+
+- **ANSI (American National Standards Institute)**: és una organització sense ànim de lucre que coordina el desenvolupament d'estàndards a nivell nacional als Estats Units.
+
+- **ITU-T (International Telecommunication Union - Telecommunication Standardization Sector)**: és una agència especialitzada de les Nacions Unides que estableix estàndards per a les tecnologies de la informació i la comunicació.
+
+Per una altra banda, per ajudar a la compatibilitat, hi ha organitzacions i associacions que fixen els estàndards de facto, com ara:
+
+- **ISOC (Internet Society)**, **IAB (Internet Architecture Board)** i **IETF (Internet Engineering Task Force)**: són organitzacions sense ànim de lucre que promouen i desenvolupen estàndards i protocols per a Internet.
+
+- **IEEE (Institute of Electrical and Electronics Engineers)**: és una organització professional que desenvolupa estàndards per a una àmplia gamma de tecnologies, incloent-hi les xarxes locals i les comunicacions sense fils.
+
+- **EIA/TIA (Electronic Industries Alliance / Telecommunications Industry Association)**: són organitzacions que desenvolupen estàndards per a la indústria electrònica i de telecomunicacions, incloent-hi els estàndards per a cables i connectors utilitzats en xarxes locals.
+
+- **Wi-Fi Alliance**: és una organització que promou i certifica la compatibilitat dels dispositius sense fils amb la tecnologia Wi-Fi, establint estàndards per a la interoperabilitat i el rendiment de les xarxes sense fils.
+
+## Mapa físic de la xarxa local
+
+És una eina molt important pel manteniment d’una xarxa local, perquè permet localitzar els diferents equips i conèixer les rutes que segueix el cablejat. Això simplifica molt la tasca de localitzar i resoldre problemes de connexió, així com planificar ampliacions o modificacions en la xarxa.
+
+![Mapa físic de la xarxa local](./media/mapa_fisic.png)
+
+> **Imatge 10:** Exemple de mapa físic d’una xarxa local. Atribució: [visaletterapplication.com](https://visalettersapplication.com)
+
+### Com crear un mapa físic de la xarxa local
+
+El primer pas és recopilar la informació (localització equips, conductes, etc.) A continuació usar una eina de disseny per elaborar un plànol de la planta on es troba la xarxa. Es poden usar eines com: **Microsoft Visio**, **LucidChart**, etc. En aquest pas, s'ubiquen els diferents elements (ordinadors, impressores, etc.) i les conduccions del cable.
