@@ -20,7 +20,7 @@ Un altre aspecte a tenir en compte és com es mesura la velocitat de transmissi�
 
 Desenvolupada per Xerox a la dècada del 1970. Actualment és l’estàndard de facto de les xarxes locals amb cable i es troba recollit en l’estàndard IEEE 802.3, tot i que encara se sol anomenar simplement Ethernet. Aquest estàndard defineix els aspectes de les capes 1 i 2 del model OSI (xarxa local).
 
-Originàriament Ethernet oferia una velocitat de 10 Mbps en xarxes amb bus, però posteriorment va evolucionar a un model d'estrella amb commutadors.
+Originàriament Ethernet oferia una velocitat teòrica de 10 Mbps en xarxes amb bus, però posteriorment va evolucionar a un model d'estrella amb commutadors.
 
 Versions actuals:
 
@@ -48,24 +48,26 @@ Es representa en format hexadecimal: `00:30:1b:b7:cd:b6`
 
 És una adreça **única** que es registra al hardware de l’adaptador. Un equip té una adreça MAC per cada adaptador de xarxa que tingui.
 
-[Mac Address Lookup](https://macaddresslookup.io/es)
+[Mac Address Lookup](https://dnschecker.org/mac-lookup.php)
 
 #### Control del mitjà
 
 Ethernet és una xarxa anomenada de **difusió**, això vol dir que els equips no fan torns per escriure a la xarxa, això implica que hi ha competició pel medi.
 
-En ser originàriament en bus, es produïen col·lisions quan dos equips escrivien simultàniament.
+Com inicialment usava una topologia en bus (medi compartit), es produïen col·lisions quan dos equips escrivien simultàniament.
 
 ![Col·lisions a Ethernet](./media/collision.png)
-
-Per solucionar aquest problema, s’utilitza un protocol anomenat **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)**. Aquest protocol permet que els dispositius escoltin el medi abans d’enviar dades i detectin col·lisions quan es produeixen. El seu funcionament es basa en els següents passos:
-
-- Abans d’escriure l’equip mira que la xarxa estigui lliure.
-- Si un equip detecta una col·lisió s'aturaven tots els enviaments i esperaven un temps aleatori abans de tornar a intentar enviar les dades.
 
 Quan es va passar de la topologia de bus a la d'estrella, els primers concentradors (hubs) no evitaven les col·lisions, perquè enviaven les dades a tots els ports (replicaven el funcionament d'un bus), de manera que tota la xarxa local era un únic domini de col·lisions.
 
 ![Hubs a Ethernet](./media/Hub.gif)
+
+![Col·lisions a Ethernet amb hubs](./media/collision.gif)
+
+Per solucionar aquest problema, s’utilitza un protocol anomenat **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)**. Aquest protocol permet que els dispositius escoltin el medi abans d’enviar dades i detectin col·lisions quan es produeixen. El seu funcionament es basa en els següents passos:
+
+- Abans d’escriure l’equip mira que la xarxa estigui lliure. Analogia: "si algú està parlant, m'espero".
+- Si un equip detecta una col·lisió s'aturaven tots els enviaments i esperaven un temps aleatori abans de tornar a intentar enviar les dades. Seguint amb l'analogia, "si algú parla al mateix temps que jo, tots dos callem i provem a tornar a parlar esperant un moment".
 
 Posteriorment, els hubs es van substituir per commutadors (switch) que només enviaven les dades al port destinatari, de manera el domini de col·lisions es reduïa a un únic port (entre el switch i el dispositiu), i per tant, les col·lisions es van reduir molt.
 
@@ -209,3 +211,11 @@ Són els dispositius que s'encarreguen de gestionar el trànsit de dades a la xa
 
 ![Access point](./media/access-point.png)
 > Access point. Atribució: [tp-link](https://www.tp-link.com/es/home-networking/access-point/tl-wa3001/)
+
+## Resum de la unitat
+
+Es parteix dels conceptes bàsics de transmissió de dades (símplex, half dúplex i full dúplex) i de com es mesura la velocitat de transmissió en bits per segon, per endinsar-se després en Ethernet, l'estàndard dominant a les xarxes locals amb cable. S'explica com ha evolucionat des de les primeres xarxes en bus amb hubs, on les col·lisions eren habituals i es gestionaven amb el protocol CSMA/CD, fins als switches actuals en topologia d'estrella que treballen en full dúplex i eliminen pràcticament les col·lisions. També es tracten les adreces MAC com a identificadors únics dels equips i l'estructura de la trama Ethernet, la unitat bàsica d'informació que circula per la xarxa.
+
+A continuació es descriuen els elements físics que formen una xarxa local: el cablejat de parells de coure (UTP, FTP i S/FTP, segons el nivell d'apantallament) i la fibra òptica (monomode i multimode), comparant-ne els avantatges i limitacions pel que fa a interferències, distància i cost. S'hi inclouen també els connectors normalitzats per a cada tipus de mitjà (RJ-45, GG-45 i TERA per al coure; MTP/MPO, SC i LC per a la fibra òptica) i la tecnologia Power over Ethernet (PoE), que permet alimentar dispositius a través del mateix cable de dades.
+
+Finalment, s'identifiquen els dispositius d'electrònica de xarxa necessaris per muntar i connectar una xarxa local: les targetes de xarxa (NIC), que permeten als equips connectar-se al mitjà físic; el switch, que concentra i dirigeix el trànsit dins de la xarxa local segons les adreces MAC; el router, que interconnecta la xarxa local amb altres xarxes com Internet; i el punt d'accés (access point), que permet la connexió de dispositius sense fils. En conjunt, es presenta una visió completa dels components necessaris per dissenyar, cablejar i muntar una xarxa local funcional.
