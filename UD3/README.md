@@ -58,9 +58,13 @@ Com inicialment usava una topologia en bus (medi compartit), es produïen col·l
 
 ![Col·lisions a Ethernet](./media/collision.png)
 
-Quan es va passar de la topologia de bus a la d'estrella, els primers concentradors (hubs) no evitaven les col·lisions, perquè enviaven les dades a tots els ports (replicaven el funcionament d'un bus), de manera que tota la xarxa local era un únic domini de col·lisions.
+Quan es va passar de la topologia de bus a la d'estrella, el primer concetrador era el **hub**, que actua com un repartidor de senyal, enviant les dades rebudes a tots els ports. Això permetia que els equips es connectessin a la xarxa local sense necessitat de fer un cablejat en bus.
 
 ![Hubs a Ethernet](./media/Hub.gif)
+
+Els hubs no evitaven les col·lisions, perquè enviaven les dades a tots els ports (replicaven el funcionament d'un bus), de manera que tota la xarxa local era un únic **domini de col·lisions**.
+
+Anomenem **domini de col·lisions** a l’àrea de la xarxa on un equip pot provocar una col·lisió amb un altre equip.
 
 ![Col·lisions a Ethernet amb hubs](./media/collision.gif)
 
@@ -69,11 +73,13 @@ Per solucionar aquest problema, s’utilitza un protocol anomenat **CSMA/CD (Car
 - Abans d’escriure l’equip mira que la xarxa estigui lliure. Analogia: "si algú està parlant, m'espero".
 - Si un equip detecta una col·lisió s'aturaven tots els enviaments i esperaven un temps aleatori abans de tornar a intentar enviar les dades. Seguint amb l'analogia, "si algú parla al mateix temps que jo, tots dos callem i provem a tornar a parlar esperant un moment".
 
-Posteriorment, els hubs es van substituir per commutadors (switch) que només enviaven les dades al port destinatari, de manera el domini de col·lisions es reduïa a un únic port (entre el switch i el dispositiu), i per tant, les col·lisions es van reduir molt.
+Posteriorment, els hubs es van substituir per commutadors (switch) que només enviaven les dades al port destinatari, de manera el **domini de col·lisions es reduïa a un únic enllaç** (entre el switch i el dispositiu), i per tant, les col·lisions es van reduir molt.
 
 ![Switch a Ethernet](./media/Switch.gif)
 
-Finalment, Ethernet va passar a un model de transmissió full dúplex, de manera que no hi ha possibilitat de col·lisions. Per aquest motiu, actualment el CSMA/CD ve deshabilitat per defecte.
+Finalment, Ethernet va passar a un model de transmissió **full dúplex**, de manera que no hi ha possibilitat de col·lisions. Per aquest motiu, actualment el CSMA/CD ve deshabilitat per defecte.
+
+> ⚠️ **Alerta**: encara que el CSMA/CD estigui deshabilitat per defecte, no s'ha eliminat, ja que si connectem un dispositiu antic a una xarxa moderna o un dispositiu modern a una xarxa antiga, el CSMA/CD s'activarà automàticament per permetre la compatibilitat entre dispositius.
 
 ### Trama o frame
 
