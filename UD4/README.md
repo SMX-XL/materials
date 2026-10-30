@@ -62,7 +62,9 @@ La gestió dels residus informàtics s’ha de realitzar en lloc autoritzats:
 
 En el punt de gestió es realitzarà la separació dels diferents components dels dispositius.
 
-![Gestió de residus](./media/residu.png)
+[![Gestió de residus](./media/residu.png)](https://youtu.be/J3ZgCl_ofPM?si=tB14iV8htj3bXUy6)
+
+> Atribució:Todos Somos Reciclaje. (Març 2024) *Cómo funciona una Planta de Reciclaje de Residuos Electrónicos*. YouTube.
 
 I quines accions concretes es poden fer des del lloc de treball?
 
