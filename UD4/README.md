@@ -23,7 +23,7 @@ Els riscos laborals associats a la instal·lació i manteniment de xarxes locals
 - Talls.
 - Projecció de partícules o fragments.
 - Descàrregues elèctriques.
-- Exposició a fonts òptiques.
+- Exposició a fonts òptiques (laser).
 - Postures de treball forçades o manteniment de postures estàtiques.
 
 ![Exemple de risc laboral](./media/rl.png)
