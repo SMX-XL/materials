@@ -60,7 +60,7 @@ La gestió dels residus informàtics s’ha de realitzar en lloc autoritzats:
 - Deixalleries
 - Gestors Autoritzat
 
-En el punt de gestió es realitzarà la separació dels diferents components dels dispositius.
+En el punt de gestió es realitzarà la separació dels diferents components dels dispositius, com es pot en el següent vídeo:
 
 [![Gestió de residus](./media/residu.png)](https://youtu.be/J3ZgCl_ofPM?si=tB14iV8htj3bXUy6)
 
