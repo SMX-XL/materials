@@ -1,7 +1,5 @@
 # UD5. Instal·lació física de la xarxa: cablatge estructurat
 
-RA2. Desplega el cablejat d'una xarxa local interpretant-ne especificacions i aplicant-hi tècniques de muntatge.
-
 RA3. Interconnecta equips en xarxes locals cablejades descrivint estàndards de cablejat i aplicant tècniques de muntatge de connectors.
 
 ## Introducció
