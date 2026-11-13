@@ -98,14 +98,20 @@ Finalment, Ethernet va passar a un model de transmissió **full dúplex**, de ma
 
 És una tecnologia que permet subministrar energia elèctrica a dispositius de xarxa a través del mateix cable de dades. Això elimina la necessitat d’una font d’alimentació separada per a aquests dispositius, com ara punts d’accés Wi-Fi, telèfons IP o càmeres de seguretat.
 
-I com es fa? A través de l’ús de parells de cables que no s’utilitzen per a la transmissió de dades, actualment en cables de 4 parells, s’utilitzen els parells 1 i 2 per a la transmissió de dades i els parells 3 i 4 per subministrar energia elèctrica. Aquesta tecnologia és compatible amb diferents estàndards IEEE 802.3af (PoE), IEEE 802.3at (PoE+), IEE 802.3bt Type3 (PoE++) i IEEE 802.3bt Type4 (Hi-PoE) que defineixen la potència màxima que es pot subministrar a través del cable.
+**I com es fa?**
+
+Quan es fa definir l'estàndar 100BASE-TX, es va decidir usar un cable de parells de coure amb 4 parells trenats, però només s'utilitzen 2 parells per transmetre les dades, això deixa lliures els altres 2 parells per subministrar energia elèctrica als dispositius (PoE i PoE+).
+
+A partir de l'estàndard 1000BASE-T (Gigabit Ethernet), s'utilitzen els 4 parells per transmetre dades. Per la injecció d'energia elèctrica, PoE i PoE+ utilitzen els mateixos dos parells però ara combinant dades i electricitat, però amb PoE++ i Hi-PoE s'utilitzen els 4 parells per subministrar energia elèctrica als dispositius simultàniament amb les dades.
+
+Aquesta tecnologia està definida amb diferents estàndards IEEE 802.3af (PoE), IEEE 802.3at (PoE+), IEE 802.3bt Type3 (PoE++) i IEEE 802.3bt Type4 (Hi-PoE) que defineixen la potència màxima que es pot subministrar a través del cable.
 
 | Estàndard | Potència màxima (W) | Usos típics                                         |
 |-----------|---------------------|------------                                         |
 | PoE       | 15,4                | Càmeres IP, telèfons IP                             |
 | PoE+      | 30                  | Càmeres PTZ, Pantalles LED, punts d’accés Wi-Fi     |
 | PoE++     | 60                  | Sis. videoconferència, il·luminació LED, AP Wi-Fi 7 |
-| Hi-PoE    | 100                 | Thin clients, AP Wi-Fi                              |
+| Hi-PoE    | 90                  | Thin clients, AP Wi-Fi                              |
 
 Per injectar l'energia elèctrica al cable de xarxes hi ha dos tipus de dispositius:
 
